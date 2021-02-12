@@ -283,6 +283,34 @@ const torusKnots = [torusKnot1, torusKnot2, torusKnot3];
 
 // Pusch torusKnots to primitives array
 primitives.push(torusKnots);
+
+// Create edges
+// Edges 1
+const edgesGeometry1 = new THREE.EdgesGeometry(boxGeometry1);
+const edges1 = new THREE.LineSegments(
+  edgesGeometry1,
+  new THREE.LineBasicMaterial({color: 0x0000f9})
+);
+edges1.position.set(36, -2, 0);
+// Edges 2
+const edgesGeometry2 = new THREE.EdgesGeometry(boxGeometry2);
+const edges2 = new THREE.LineSegments(
+  edgesGeometry2,
+  new THREE.LineBasicMaterial({color: 0x0000f9})
+);
+edges2.position.set(36, -2, -2);
+// Edges 3
+const edgesGeometry3 = new THREE.EdgesGeometry(boxGeometry3);
+const edges3 = new THREE.LineSegments(
+  edgesGeometry3,
+  new THREE.LineBasicMaterial({color: 0x0000f9})
+);
+edges3.position.set(36, -2, -4);
+// Edges
+const edges = [edges1, edges2, edges3];
+
+// Pusch edges to primitives array
+primitives.push(edges);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
