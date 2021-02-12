@@ -495,6 +495,34 @@ polyhedron3.position.set(51, -2, -4);
 
 const polyhedrons = [polyhedron1, polyhedron2, polyhedron3];
 primitives.push(polyhedrons);
+
+// Create Lathes
+// Lathes points
+const points = [];
+for (let i = 0; i < 10; ++i) {
+  points.push(new THREE.Vector2(Math.sin(i * 0.2) * 3 + 3, (i - 5) * .8));
+}
+
+// Lathe 1
+const latheGeometry1 = new THREE.LatheGeometry(points);
+const lathe1 = new THREE.Mesh(latheGeometry1, material1);
+lathe1.scale.set(0.1, 0.1, 0.1);
+lathe1.position.set(54, -2, 0);
+
+// Lathe 2
+const latheGeometry2 = new THREE.LatheGeometry(points);
+const lathe2 = new THREE.Mesh(latheGeometry2, material2);
+lathe2.scale.set(0.1, 0.1, 0.2);
+lathe2.position.set(54, -2, -2);
+
+// Lathe 1
+const latheGeometry3 = new THREE.LatheGeometry(points);
+const lathe3 = new THREE.Mesh(latheGeometry3, material3);
+lathe3.scale.set(0.1, 0.15, 0.1);
+lathe3.position.set(54, -2, -4);
+
+const lathes = [lathe1, lathe2, lathe3];
+primitives.push(lathes);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
