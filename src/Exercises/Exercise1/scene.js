@@ -142,6 +142,25 @@ const dodecahedrons = [dodecahedron1, dodecahedron2, dodecahedron3];
 
 // Pusch dodecahedrons to primitives array
 primitives.push(dodecahedrons);
+
+// Create icosahedrons
+// Icosahedron 1
+const icosahedronGeometry1 = new THREE.IcosahedronGeometry(1);
+const icosahedron1 = new THREE.Mesh(icosahedronGeometry1, material1);
+icosahedron1.position.set(15, -2, 0);
+// Icosahedron 2
+const icosahedronGeometry2 = new THREE.IcosahedronGeometry(0.7);
+const icosahedron2 = new THREE.Mesh(icosahedronGeometry2, material2);
+icosahedron2.position.set(15, -2, -2);
+// Icosahedron 3
+const icosahedronGeometry3 = new THREE.IcosahedronGeometry(0.5, 1);
+const icosahedron3 = new THREE.Mesh(icosahedronGeometry3, material3);
+icosahedron3.position.set(15, -2, -4);
+// Icosahedrons
+const icosahedrons = [icosahedron1, icosahedron2, icosahedron3];
+
+// Pusch icosahedrons to primitives array
+primitives.push(icosahedrons);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
