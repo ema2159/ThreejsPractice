@@ -123,6 +123,25 @@ const cylinders = [cylinder1, cylinder2, cylinder3];
 
 // Pusch cylinders to primitives array
 primitives.push(cylinders);
+
+// Create dodecahedrons
+// Dodecahedron 1
+const dodecahedronGeometry1 = new THREE.DodecahedronGeometry(1);
+const dodecahedron1 = new THREE.Mesh(dodecahedronGeometry1, material1);
+dodecahedron1.position.set(12, -2, 0);
+// Dodecahedron 2
+const dodecahedronGeometry2 = new THREE.DodecahedronGeometry(0.7);
+const dodecahedron2 = new THREE.Mesh(dodecahedronGeometry2, material2);
+dodecahedron2.position.set(12, -2, -2);
+// Dodecahedron 3
+const dodecahedronGeometry3 = new THREE.DodecahedronGeometry(0.5, 1);
+const dodecahedron3 = new THREE.Mesh(dodecahedronGeometry3, material3);
+dodecahedron3.position.set(12, -2, -4);
+// Dodecahedrons
+const dodecahedrons = [dodecahedron1, dodecahedron2, dodecahedron3];
+
+// Pusch dodecahedrons to primitives array
+primitives.push(dodecahedrons);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
