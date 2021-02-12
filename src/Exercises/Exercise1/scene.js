@@ -21,7 +21,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Setup orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(30, 0, 0);
+controls.target.set(27, 0, 0);
 controls.listenToKeyEvents(window); // optional
 
 // Append renderer to index.html body
@@ -523,12 +523,13 @@ lathe3.position.set(54, -2, -4);
 
 const lathes = [lathe1, lathe2, lathe3];
 primitives.push(lathes);
+
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
 });
 
-camera.position.x = 30;
+camera.position.x = 27;
 camera.position.z = 5;
 
 function animate() {
