@@ -245,6 +245,25 @@ const rings = [ring1, ring2, ring3];
 
 // Pusch rings to primitives array
 primitives.push(rings);
+
+// Create toruses
+// Torus 1
+const torusGeometry1 = new THREE.TorusGeometry(1, 0.3, 30, 30);
+const torus1 = new THREE.Mesh(torusGeometry1, material1);
+torus1.position.set(30, -2, 0);
+// Torus 2
+const torusGeometry2 = new THREE.TorusGeometry(1, 0.1);
+const torus2 = new THREE.Mesh(torusGeometry2, material2);
+torus2.position.set(30, -2, -2);
+// Torus 3
+const torusGeometry3 = new THREE.TorusGeometry(0.5, 0.1);
+const torus3 = new THREE.Mesh(torusGeometry3, material3);
+torus3.position.set(30, -2, -4);
+// Toruses
+const toruses = [torus1, torus2, torus3];
+
+// Pusch toruses to primitives array
+primitives.push(toruses);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
