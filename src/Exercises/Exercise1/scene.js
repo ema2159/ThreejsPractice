@@ -264,6 +264,25 @@ const toruses = [torus1, torus2, torus3];
 
 // Pusch toruses to primitives array
 primitives.push(toruses);
+
+// Create torusKnots
+// TorusKnot 1
+const torusKnotGeometry1 = new THREE.TorusKnotGeometry(0.4);
+const torusKnot1 = new THREE.Mesh(torusKnotGeometry1, material1);
+torusKnot1.position.set(33, -2, 0);
+// TorusKnot 2
+const torusKnotGeometry2 = new THREE.TorusKnotGeometry(0.5, 0.1);
+const torusKnot2 = new THREE.Mesh(torusKnotGeometry2, material2);
+torusKnot2.position.set(33, -2, -2);
+// TorusKnot 3
+const torusKnotGeometry3 = new THREE.TorusKnotGeometry(0.1, 0.1);
+const torusKnot3 = new THREE.Mesh(torusKnotGeometry3, material3);
+torusKnot3.position.set(33, -2, -4);
+// TorusKnots
+const torusKnots = [torusKnot1, torusKnot2, torusKnot3];
+
+// Pusch torusKnots to primitives array
+primitives.push(torusKnots);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
