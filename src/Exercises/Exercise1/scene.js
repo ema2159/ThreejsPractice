@@ -460,6 +460,41 @@ loader.load(
     scene.add(text3);
   }
 );
+
+// Create polyhedrons
+const verticesOfCube = [
+    -1, -1, -1,    1, -1, -1,    1,  1, -1,    -1,  1, -1,
+    -1, -1,  1,    1, -1,  1,    1,  1,  1,    -1,  1,  1,
+];
+const indicesOfFaces = [
+    2, 1, 0,    0, 3, 2,
+    0, 4, 7,    7, 3, 0,
+    0, 1, 5,    5, 4, 0,
+    1, 2, 6,    6, 5, 1,
+    2, 3, 7,    7, 6, 2,
+    4, 5, 6,    6, 7, 4,
+];
+
+// Polyhedron 1
+const polyhedronGeometry1 = new THREE.PolyhedronGeometry(
+    verticesOfCube, indicesOfFaces, 1, 1);
+const polyhedron1 = new THREE.Mesh(polyhedronGeometry1, material1);
+polyhedron1.position.set(51, -2, 0);
+
+// Polyhedron 2
+const polyhedronGeometry2 = new THREE.PolyhedronGeometry(
+    verticesOfCube, indicesOfFaces, 1.1, 3);
+const polyhedron2 = new THREE.Mesh(polyhedronGeometry2, material2);
+polyhedron2.position.set(51, -2, -2);
+
+// Polyhedron 3
+const polyhedronGeometry3 = new THREE.PolyhedronGeometry(
+    verticesOfCube, indicesOfFaces, 0.5, 1);
+const polyhedron3 = new THREE.Mesh(polyhedronGeometry3, material3);
+polyhedron3.position.set(51, -2, -4);
+
+const polyhedrons = [polyhedron1, polyhedron2, polyhedron3];
+primitives.push(polyhedrons);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
