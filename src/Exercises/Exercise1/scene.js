@@ -226,6 +226,25 @@ const spheres = [sphere1, sphere2, sphere3];
 
 // Pusch spheres to primitives array
 primitives.push(spheres);
+
+// Create rings
+// Ring 1
+const ringGeometry1 = new THREE.RingGeometry(0.5, 1, 30, 30);
+const ring1 = new THREE.Mesh(ringGeometry1, material1);
+ring1.position.set(27, -2, 0);
+// Ring 2
+const ringGeometry2 = new THREE.RingGeometry(0.9, 1);
+const ring2 = new THREE.Mesh(ringGeometry2, material2);
+ring2.position.set(27, -2, -2);
+// Ring 3
+const ringGeometry3 = new THREE.RingGeometry(0.5, 1, 30, 30, 0, Math.PI);
+const ring3 = new THREE.Mesh(ringGeometry3, material3);
+ring3.position.set(27, -2, -4);
+// Rings
+const rings = [ring1, ring2, ring3];
+
+// Pusch rings to primitives array
+primitives.push(rings);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
