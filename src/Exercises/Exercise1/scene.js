@@ -27,6 +27,9 @@ controls.listenToKeyEvents(window); // optional
 // Append renderer to index.html body
 document.body.appendChild(renderer.domElement);
 
+const light = new THREE.DirectionalLight(0xffffff);
+light.position.set(0, 1, 1).normalize();
+scene.add(light);
 camera.position.x = 30;
 camera.position.z = 5;
 
