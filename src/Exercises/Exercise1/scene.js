@@ -38,6 +38,13 @@ const material2 = new THREE.MeshPhongMaterial({
   shininess: 150,
 });
 const material3 = new THREE.MeshToonMaterial({color: 0x1ea8fc});
+
+// Create floor
+const floorGeometry = new THREE.PlaneGeometry(100, 100);
+const floor = new THREE.Mesh(floorGeometry, material1);
+scene.add(floor);
+floor.position.set(0, -4, 0);
+floor.rotation.x -= Math.PI/2;
 camera.position.x = 30;
 camera.position.z = 5;
 
