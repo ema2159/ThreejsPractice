@@ -43,7 +43,7 @@ const material3 = new THREE.MeshToonMaterial({color: 0x1ea8fc});
 const floorGeometry = new THREE.PlaneGeometry(60, 8);
 const floor = new THREE.Mesh(floorGeometry, material1);
 scene.add(floor);
-floor.position.set(27, -3, -2);
+floor.position.set(27, -3.5, -2);
 floor.rotation.x -= Math.PI / 2;
 
 const primitives = [];
