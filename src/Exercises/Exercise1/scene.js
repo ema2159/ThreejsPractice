@@ -413,6 +413,53 @@ const shapes = [shape1, shape2, shape3];
 
 // Pusch shape to primitives array
 primitives.push(shapes);
+
+// Create texts
+const loader = new THREE.FontLoader();
+loader.load(
+  "https://threejsfundamentals.org/threejs/resources/threejs/fonts/helvetiker_regular.typeface.json",
+  function (font) {
+    // Text 1
+    const textGeometry1 = new THREE.TextGeometry("Emma", {
+      font: font,
+      size: 50,
+      height: 10,
+    });
+
+    const text1 = new THREE.Mesh(textGeometry1, material1);
+    text1.scale.set(0.01, 0.01, 0.01);
+    text1.position.set(48, -2, 0);
+
+    // Text 2
+    const textGeometry2 = new THREE.TextGeometry("UJM", {
+      font: font,
+      size: 50,
+      height: 10,
+    });
+
+    const text2 = new THREE.Mesh(textGeometry2, material2);
+    text2.scale.set(0.01, 0.01, 0.01);
+    text2.position.set(48, -2, -2);
+
+    // Text 3
+    const textGeometry3 = new THREE.TextGeometry("UEF", {
+      font: font,
+      size: 50,
+      height: 10,
+    });
+
+    const text3 = new THREE.Mesh(textGeometry3, material3);
+    text3.scale.set(0.01, 0.01, 0.01);
+    text3.position.set(48, -2, -4);
+
+    // Text
+    const texts = [text1, text2, text3];
+    primitives.push(texts);
+    scene.add(text1);
+    scene.add(text2);
+    scene.add(text3);
+  }
+);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
