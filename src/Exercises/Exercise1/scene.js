@@ -85,6 +85,7 @@ const circles = [circle1, circle2, circle3];
 
 // Pusch  to circles primitives array
 primitives.push(circles);
+
 // Create cones
 // Cone 1
 const coneGeometry1 = new THREE.ConeGeometry(0.5, 2);
@@ -103,6 +104,25 @@ const cones = [cone1, cone2, cone3];
 
 // Pusch cones to primitives array
 primitives.push(cones);
+
+// Create cylinders
+// Cylinder 1
+const cylinderGeometry1 = new THREE.CylinderGeometry(1, 1, 1, 32);
+const cylinder1 = new THREE.Mesh(cylinderGeometry1, material1);
+cylinder1.position.set(9, -2, 0);
+// Cylinder 2
+const cylinderGeometry2 = new THREE.CylinderGeometry(1.2, 0.5, 0.3);
+const cylinder2 = new THREE.Mesh(cylinderGeometry2, material2);
+cylinder2.position.set(9, -2, -2);
+// Cylinder 3
+const cylinderGeometry3 = new THREE.CylinderGeometry(0.5, 1, 1, 5);
+const cylinder3 = new THREE.Mesh(cylinderGeometry3, material3);
+cylinder3.position.set(9, -2, -4);
+// cylinders
+const cylinders = [cylinder1, cylinder2, cylinder3];
+
+// Pusch cylinders to primitives array
+primitives.push(cylinders);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
