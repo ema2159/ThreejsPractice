@@ -199,6 +199,33 @@ const tetrahedrons = [tetrahedron1, tetrahedron2, tetrahedron3];
 
 // Pusch tetrahedrons to primitives array
 primitives.push(tetrahedrons);
+
+// Create spheres
+// Sphere 1
+const sphereGeometry1 = new THREE.SphereGeometry(1, 30, 30);
+const sphere1 = new THREE.Mesh(sphereGeometry1, material1);
+sphere1.position.set(24, -2, 0);
+// Sphere 2
+const sphereGeometry2 = new THREE.SphereGeometry(1, 30, 30, 0, Math.PI);
+const sphere2 = new THREE.Mesh(sphereGeometry2, material2);
+sphere2.position.set(24, -2, -2);
+// Sphere 3
+const sphereGeometry3 = new THREE.SphereGeometry(
+  1,
+  30,
+  30,
+  0,
+  1.5 * Math.PI,
+  0,
+  0.5 * Math.PI
+);
+const sphere3 = new THREE.Mesh(sphereGeometry3, material3);
+sphere3.position.set(24, -2, -4);
+// Spheres
+const spheres = [sphere1, sphere2, sphere3];
+
+// Pusch spheres to primitives array
+primitives.push(spheres);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
