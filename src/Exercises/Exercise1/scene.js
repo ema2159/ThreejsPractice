@@ -67,6 +67,24 @@ const boxes = [box1, box2, box3];
 // Pusch boxes to primitives array
 primitives.push(boxes);
 
+// Create circles
+// Circle 1
+const circleGeometry1 = new THREE.CircleGeometry(0.5, 32);
+const circle1 = new THREE.Mesh(circleGeometry1, material1);
+circle1.position.set(3, -2, 0);
+// Circle 2
+const circleGeometry2 = new THREE.CircleGeometry(1.2, 5);
+const circle2 = new THREE.Mesh(circleGeometry2, material2);
+circle2.position.set(3, -2, -2);
+// Circle 3
+const circleGeometry3 = new THREE.CircleGeometry(1, 30, 0, Math.PI);
+const circle3 = new THREE.Mesh(circleGeometry3, material3);
+circle3.position.set(3, -2, -4);
+// Circles
+const circles = [circle1, circle2, circle3];
+
+// Pusch  to circles primitives array
+primitives.push(circles);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
