@@ -339,6 +339,55 @@ const wireframe = [wireframe1, wireframe2, wireframe3];
 
 // Pusch wireframe to primitives array
 primitives.push(wireframe);
+
+// Create extrudes
+// Extrude shape
+const shape = new THREE.Shape();
+const x = -2.5;
+const y = -5;
+shape.moveTo(x + 2.5, y + 2.5);
+shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
+shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
+shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
+shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
+shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
+shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
+
+// Extrude settings
+const extrudeSettings = {
+  steps: 2,
+  depth: 2,
+  bevelEnabled: true,
+  bevelThickness: 1,
+  bevelSize: 1,
+  bevelSegments: 2,
+};
+
+// Extrude 1
+const extrudeGeometry1 = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+const extrude1 = new THREE.Mesh(extrudeGeometry1, material1);
+extrude1.scale.set(0.1, 0.1, 0.1);
+extrude1.position.set(42, -2, 0);
+
+// Extrude 2
+extrudeSettings.depth = 4;
+const extrudeGeometry2 = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+const extrude2 = new THREE.Mesh(extrudeGeometry2, material2);
+extrude2.scale.set(0.1, 0.1, 0.1);
+extrude2.position.set(42, -2, -2);
+
+// Extrude 3
+extrudeSettings.depth = 0.5;
+const extrudeGeometry3 = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+const extrude3 = new THREE.Mesh(extrudeGeometry3, material3);
+extrude3.scale.set(0.1, 0.05, 0.05);
+extrude3.position.set(42, -2, -4);
+
+// Extrude
+const extrudes = [extrude1, extrude2, extrude3];
+
+// Pusch extrude to primitives array
+primitives.push(extrudes);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
