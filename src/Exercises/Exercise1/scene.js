@@ -311,6 +311,34 @@ const edges = [edges1, edges2, edges3];
 
 // Pusch edges to primitives array
 primitives.push(edges);
+
+// Create wireframe
+// Wireframe 1
+const wireframeGeometry1 = new THREE.WireframeGeometry(boxGeometry1);
+const wireframe1 = new THREE.LineSegments(
+  wireframeGeometry1,
+  new THREE.LineBasicMaterial({color: 0xf90000})
+);
+wireframe1.position.set(39, -2, 0);
+// Wireframe 2
+const wireframeGeometry2 = new THREE.WireframeGeometry(boxGeometry2);
+const wireframe2 = new THREE.LineSegments(
+  wireframeGeometry2,
+  new THREE.LineBasicMaterial({color: 0xf90000})
+);
+wireframe2.position.set(39, -2, -2);
+// Wireframe 3
+const wireframeGeometry3 = new THREE.WireframeGeometry(boxGeometry3);
+const wireframe3 = new THREE.LineSegments(
+  wireframeGeometry3,
+  new THREE.LineBasicMaterial({color: 0xf90000})
+);
+wireframe3.position.set(39, -2, -4);
+// Wireframe
+const wireframe = [wireframe1, wireframe2, wireframe3];
+
+// Pusch wireframe to primitives array
+primitives.push(wireframe);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
