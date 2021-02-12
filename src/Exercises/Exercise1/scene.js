@@ -30,6 +30,14 @@ document.body.appendChild(renderer.domElement);
 const light = new THREE.DirectionalLight(0xffffff);
 light.position.set(0, 1, 1).normalize();
 scene.add(light);
+
+// Materials
+const material1 = new THREE.MeshNormalMaterial();
+const material2 = new THREE.MeshPhongMaterial({
+  color: 0xba45a3,
+  shininess: 150,
+});
+const material3 = new THREE.MeshToonMaterial({color: 0x1ea8fc});
 camera.position.x = 30;
 camera.position.z = 5;
 
