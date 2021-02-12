@@ -180,6 +180,25 @@ const octahedrons = [octahedron1, octahedron2, octahedron3];
 
 // Pusch octahedrons to primitives array
 primitives.push(octahedrons);
+
+// Create tetrahedrons
+// Tetrahedron 1
+const tetrahedronGeometry1 = new THREE.TetrahedronGeometry(1);
+const tetrahedron1 = new THREE.Mesh(tetrahedronGeometry1, material1);
+tetrahedron1.position.set(21, -2, 0);
+// Tetrahedron 2
+const tetrahedronGeometry2 = new THREE.TetrahedronGeometry(1, 2);
+const tetrahedron2 = new THREE.Mesh(tetrahedronGeometry2, material2);
+tetrahedron2.position.set(21, -2, -2);
+// Tetrahedron 3
+const tetrahedronGeometry3 = new THREE.TetrahedronGeometry(1, 1);
+const tetrahedron3 = new THREE.Mesh(tetrahedronGeometry3, material3);
+tetrahedron3.position.set(21, -2, -4);
+// Tetrahedrons
+const tetrahedrons = [tetrahedron1, tetrahedron2, tetrahedron3];
+
+// Pusch tetrahedrons to primitives array
+primitives.push(tetrahedrons);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
