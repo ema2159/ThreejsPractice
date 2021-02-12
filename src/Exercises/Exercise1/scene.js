@@ -64,7 +64,7 @@ box3.position.set(0, -2, -4);
 // Boxes
 const boxes = [box1, box2, box3];
 
-// Pusch boxes to primitives array
+// Push boxes to primitives array
 primitives.push(boxes);
 
 // Create circles
@@ -83,7 +83,7 @@ circle3.position.set(3, -2, -4);
 // Circles
 const circles = [circle1, circle2, circle3];
 
-// Pusch  to circles primitives array
+// Push  to circles primitives array
 primitives.push(circles);
 
 // Create cones
@@ -102,7 +102,7 @@ cone3.position.set(6, -2, -4);
 // Cones
 const cones = [cone1, cone2, cone3];
 
-// Pusch cones to primitives array
+// Push cones to primitives array
 primitives.push(cones);
 
 // Create cylinders
@@ -121,7 +121,7 @@ cylinder3.position.set(9, -2, -4);
 // cylinders
 const cylinders = [cylinder1, cylinder2, cylinder3];
 
-// Pusch cylinders to primitives array
+// Push cylinders to primitives array
 primitives.push(cylinders);
 
 // Create dodecahedrons
@@ -140,7 +140,7 @@ dodecahedron3.position.set(12, -2, -4);
 // Dodecahedrons
 const dodecahedrons = [dodecahedron1, dodecahedron2, dodecahedron3];
 
-// Pusch dodecahedrons to primitives array
+// Push dodecahedrons to primitives array
 primitives.push(dodecahedrons);
 
 // Create icosahedrons
@@ -159,7 +159,7 @@ icosahedron3.position.set(15, -2, -4);
 // Icosahedrons
 const icosahedrons = [icosahedron1, icosahedron2, icosahedron3];
 
-// Pusch icosahedrons to primitives array
+// Push icosahedrons to primitives array
 primitives.push(icosahedrons);
 
 // Create octahedrons
@@ -178,7 +178,7 @@ octahedron3.position.set(18, -2, -4);
 // Octahedrons
 const octahedrons = [octahedron1, octahedron2, octahedron3];
 
-// Pusch octahedrons to primitives array
+// Push octahedrons to primitives array
 primitives.push(octahedrons);
 
 // Create tetrahedrons
@@ -197,7 +197,7 @@ tetrahedron3.position.set(21, -2, -4);
 // Tetrahedrons
 const tetrahedrons = [tetrahedron1, tetrahedron2, tetrahedron3];
 
-// Pusch tetrahedrons to primitives array
+// Push tetrahedrons to primitives array
 primitives.push(tetrahedrons);
 
 // Create spheres
@@ -224,7 +224,7 @@ sphere3.position.set(24, -2, -4);
 // Spheres
 const spheres = [sphere1, sphere2, sphere3];
 
-// Pusch spheres to primitives array
+// Push spheres to primitives array
 primitives.push(spheres);
 
 // Create rings
@@ -243,7 +243,7 @@ ring3.position.set(27, -2, -4);
 // Rings
 const rings = [ring1, ring2, ring3];
 
-// Pusch rings to primitives array
+// Push rings to primitives array
 primitives.push(rings);
 
 // Create toruses
@@ -262,7 +262,7 @@ torus3.position.set(30, -2, -4);
 // Toruses
 const toruses = [torus1, torus2, torus3];
 
-// Pusch toruses to primitives array
+// Push toruses to primitives array
 primitives.push(toruses);
 
 // Create torusKnots
@@ -281,7 +281,7 @@ torusKnot3.position.set(33, -2, -4);
 // TorusKnots
 const torusKnots = [torusKnot1, torusKnot2, torusKnot3];
 
-// Pusch torusKnots to primitives array
+// Push torusKnots to primitives array
 primitives.push(torusKnots);
 
 // Create edges
@@ -309,7 +309,7 @@ edges3.position.set(36, -2, -4);
 // Edges
 const edges = [edges1, edges2, edges3];
 
-// Pusch edges to primitives array
+// Push edges to primitives array
 primitives.push(edges);
 
 // Create wireframe
@@ -337,7 +337,7 @@ wireframe3.position.set(39, -2, -4);
 // Wireframe
 const wireframe = [wireframe1, wireframe2, wireframe3];
 
-// Pusch wireframe to primitives array
+// Push wireframe to primitives array
 primitives.push(wireframe);
 
 // Create extrudes
@@ -386,7 +386,7 @@ extrude3.position.set(42, -2, -4);
 // Extrude
 const extrudes = [extrude1, extrude2, extrude3];
 
-// Pusch extrude to primitives array
+// Push extrude to primitives array
 primitives.push(extrudes);
 
 // Shape geometry
@@ -411,7 +411,7 @@ shape3.position.set(45, -2, -4);
 // Shape
 const shapes = [shape1, shape2, shape3];
 
-// Pusch shape to primitives array
+// Push shape to primitives array
 primitives.push(shapes);
 
 // Create texts
