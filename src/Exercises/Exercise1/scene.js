@@ -77,6 +77,12 @@ camera.position.z = 5;
 
 function animate() {
   requestAnimationFrame(animate);
+  primitives.forEach((primitive) => {
+    primitive.forEach((element, i) => {
+      element.rotation.x += 0.01 + 0.001 * i;
+      element.rotation.y += 0.01;
+    });
+  });
   renderer.render(scene, camera);
 }
 animate();
