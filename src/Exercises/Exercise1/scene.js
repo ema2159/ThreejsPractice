@@ -85,6 +85,24 @@ const circles = [circle1, circle2, circle3];
 
 // Pusch  to circles primitives array
 primitives.push(circles);
+// Create cones
+// Cone 1
+const coneGeometry1 = new THREE.ConeGeometry(0.5, 2);
+const cone1 = new THREE.Mesh(coneGeometry1, material1);
+cone1.position.set(6, -2, 0);
+// Cone 2
+const coneGeometry2 = new THREE.ConeGeometry(1.2, 0.5);
+const cone2 = new THREE.Mesh(coneGeometry2, material2);
+cone2.position.set(6, -2, -2);
+// Cone 3
+const coneGeometry3 = new THREE.ConeGeometry(1, 1, 20);
+const cone3 = new THREE.Mesh(coneGeometry3, material3);
+cone3.position.set(6, -2, -4);
+// Cones
+const cones = [cone1, cone2, cone3];
+
+// Pusch cones to primitives array
+primitives.push(cones);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
