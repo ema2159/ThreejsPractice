@@ -388,6 +388,31 @@ const extrudes = [extrude1, extrude2, extrude3];
 
 // Pusch extrude to primitives array
 primitives.push(extrudes);
+
+// Shape geometry
+// Shape 1
+const shapeGeometry1 = new THREE.ShapeGeometry(shape);
+const shape1 = new THREE.Mesh(shapeGeometry1, material1);
+shape1.scale.set(0.1, 0.1, 0.1);
+shape1.position.set(45, -2, 0);
+
+// Shape 2
+const shapeGeometry2 = new THREE.ShapeGeometry(shape);
+const shape2 = new THREE.Mesh(shapeGeometry2, material2);
+shape2.scale.set(0.1, 0.1, 0.1);
+shape2.position.set(45, -2, -2);
+
+// Shape 3
+const shapeGeometry3 = new THREE.ShapeGeometry(shape);
+const shape3 = new THREE.Mesh(shapeGeometry3, material3);
+shape3.scale.set(0.1, 0.05, 0.05);
+shape3.position.set(45, -2, -4);
+
+// Shape
+const shapes = [shape1, shape2, shape3];
+
+// Pusch shape to primitives array
+primitives.push(shapes);
 // Add all elements to the scene
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
