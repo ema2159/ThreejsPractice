@@ -45,6 +45,33 @@ const floor = new THREE.Mesh(floorGeometry, material1);
 scene.add(floor);
 floor.position.set(0, -4, 0);
 floor.rotation.x -= Math.PI/2;
+
+const primitives = [];
+
+// Create cubes
+// Box 1
+const boxGeometry1 = new THREE.BoxGeometry();
+const box1 = new THREE.Mesh(boxGeometry1, material1);
+box1.position.set(0, -2, 0);
+// Box 2
+const boxGeometry2 = new THREE.BoxGeometry(1, 1, 0.3);
+const box2 = new THREE.Mesh(boxGeometry2, material2);
+box2.position.set(0, -2, -2);
+// Box 3
+const boxGeometry3 = new THREE.BoxGeometry(0.1, 1, 1, 1, 1, 1);
+const box3 = new THREE.Mesh(boxGeometry3, material3);
+box3.position.set(0, -2, -4);
+// Boxes
+const boxes = [box1, box2, box3];
+
+// Pusch boxes to primitives array
+primitives.push(boxes);
+
+// Add all elements to the scene
+primitives.forEach((primitive) => {
+  primitive.forEach((element) => scene.add(element));
+});
+
 camera.position.x = 30;
 camera.position.z = 5;
 
