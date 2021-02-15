@@ -45,7 +45,7 @@ const material2 = new THREE.MeshPhongMaterial({
 const material3 = new THREE.MeshToonMaterial({color: 0x1ea8fc});
 
 const lineMaterial = new THREE.LineBasicMaterial({
-  color: 0xEAEAEA,
+  color: 0xeaeaea,
   linewidth: 2,
 });
 
@@ -510,7 +510,7 @@ primitives.push(polyhedrons);
 // Lathes points
 const points = [];
 for (let i = 0; i < 10; ++i) {
-  points.push(new THREE.Vector2(Math.sin(i * 0.2) * 3 + 3, (i - 5) * .8));
+  points.push(new THREE.Vector2(Math.sin(i * 0.2) * 3 + 3, (i - 5) * 0.8));
 }
 
 // Lathe 1
@@ -544,23 +544,23 @@ function createCross(center, material) {
   let x, y, z;
   [x, y, z] = center;
   let vectorPoints = [];
-  vectorPoints.push( new THREE.Vector3(x, y, z));
-  vectorPoints.push( new THREE.Vector3(x + 0.5, y, z));
-  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z));
-  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z + 0.25));
-  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z - 0.25));
+  vectorPoints.push(new THREE.Vector3(x, y, z));
+  vectorPoints.push(new THREE.Vector3(x + 0.5, y, z));
+  vectorPoints.push(new THREE.Vector3(x + 0.25, y, z));
+  vectorPoints.push(new THREE.Vector3(x + 0.25, y, z + 0.25));
+  vectorPoints.push(new THREE.Vector3(x + 0.25, y, z - 0.25));
   console.log(vectorPoints.length);
 
-  let geometry = new THREE.BufferGeometry().setFromPoints( vectorPoints );
+  let geometry = new THREE.BufferGeometry().setFromPoints(vectorPoints);
 
-  let line = new THREE.Line( geometry, material );
+  let line = new THREE.Line(geometry, material);
   scene.add(line);
 }
 
 for (var i = -4; i < 59; i++) {
   for (var j = -19; j < 19; j++) {
     createCross([i, -3, j], lineMaterial);
-  } 
+  }
 }
 
 camera.position.x = 27;
