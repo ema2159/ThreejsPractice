@@ -31,6 +31,11 @@ const light = new THREE.DirectionalLight(0xffffff);
 light.position.set(0, 1, 1).normalize();
 scene.add(light);
 
+// First part: Add all available primitives.
+// For this section all the promitives available must be added.
+// The intention of this section is to understand each primitive, so it is ok
+// for all of the Meshes to be hardcoded.
+
 // Materials
 const material1 = new THREE.MeshNormalMaterial();
 const material2 = new THREE.MeshPhongMaterial({
