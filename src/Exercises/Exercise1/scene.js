@@ -39,12 +39,17 @@ const material2 = new THREE.MeshPhongMaterial({
 });
 const material3 = new THREE.MeshToonMaterial({color: 0x1ea8fc});
 
+const lineMaterial = new THREE.LineBasicMaterial({
+  color: 0xEAEAEA,
+  linewidth: 2,
+});
+
 // Create floor
-const floorGeometry = new THREE.PlaneGeometry(60, 8);
-const floor = new THREE.Mesh(floorGeometry, material1);
-scene.add(floor);
-floor.position.set(27, -3.5, -2);
-floor.rotation.x -= Math.PI / 2;
+// const floorGeometry = new THREE.PlaneGeometry(60, 8);
+// const floor = new THREE.Mesh(floorGeometry, material1);
+// scene.add(floor);
+// floor.position.set(27, -3.5, -2);
+// floor.rotation.x -= Math.PI / 2;
 
 const primitives = [];
 
@@ -528,6 +533,30 @@ primitives.push(lathes);
 primitives.forEach((primitive) => {
   primitive.forEach((element) => scene.add(element));
 });
+
+// Function for drawing a cross on a x, y, z coordinate
+function createCross(center, material) {
+  let x, y, z;
+  [x, y, z] = center;
+  let vectorPoints = [];
+  vectorPoints.push( new THREE.Vector3(x, y, z));
+  vectorPoints.push( new THREE.Vector3(x + 0.5, y, z));
+  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z));
+  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z + 0.25));
+  vectorPoints.push( new THREE.Vector3(x + 0.25, y, z - 0.25));
+  console.log(vectorPoints.length);
+
+  let geometry = new THREE.BufferGeometry().setFromPoints( vectorPoints );
+
+  let line = new THREE.Line( geometry, material );
+  scene.add(line);
+}
+
+for (var i = -4; i < 59; i++) {
+  for (var j = -19; j < 19; j++) {
+    createCross([i, -3, j], lineMaterial);
+  } 
+}
 
 camera.position.x = 27;
 camera.position.z = 5;
