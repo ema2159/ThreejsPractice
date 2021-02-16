@@ -79,8 +79,7 @@ for (var i = -4; i < 56; i++) {
   }
 }
 
-camera.position.x = 27;
-camera.position.z = 5;
+perspectiveCamera.position.set(27, 0, 5);
 
 function animate() {
   requestAnimationFrame(animate);
