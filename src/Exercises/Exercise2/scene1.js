@@ -6,6 +6,17 @@ import addPrimitives from "./primitives.js";
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x21272e);
 
+// Renderers setup
+// Select rendering spaces
+const renderingBoxUp = document.getElementById("upper");
+const renderingBoxDown = document.getElementById("lower");
+// Create new renderers
+const rendererUp = new THREE.WebGLRenderer();
+const rendererDown = new THREE.WebGLRenderer();
+// Set renderers size
+rendererUp.setSize(renderingBoxUp.offsetWidth, renderingBoxUp.offsetHeight);
+rendererDown.setSize(renderingBoxDown.offsetWidth, renderingBoxDown.offsetHeight);
+
 // Camera configuration
 // Parameters: FOV, aspect ratio, minimum rendering distance, maximum rendering distance
 const camera = new THREE.PerspectiveCamera(
