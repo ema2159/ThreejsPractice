@@ -19,23 +19,12 @@ rendererDown.setSize(renderingBoxDown.offsetWidth, renderingBoxDown.offsetHeight
 
 // Camera configuration
 // Parameters: FOV, aspect ratio, minimum rendering distance, maximum rendering distance
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
+const perspectiveCamera = new THREE.PerspectiveCamera(75,
+					   window.innerWidth / window.innerHeight,
+                                           0.1,
+                                           1000);
 
-// Renderer setup
-const renderingBox = document.getElementById("upper");
-const renderer = new THREE.WebGLRenderer();
-// Set renderer size (window size)
-renderer.setSize(renderingBox.offsetWidth, renderingBox.offsetHeight);
-
-// Setup orbit controls
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(27, 0, 0);
-controls.listenToKeyEvents(window); // optional
+const ortographicCamera = new THREE.OrthographicCamera(-5, 5, 5, -5, 1, 1000);
 
 // Append renderer to index.html body
 renderingBox.appendChild(renderer.domElement);
@@ -81,6 +70,9 @@ for (var i = -4; i < 56; i++) {
 
 perspectiveCamera.position.set(27, 0, 5);
 
+ortographicCamera.position.set(4.7, 3, 5);
+ortographicCamera.lookAt(27, 0, 0);
+
 function animate() {
   requestAnimationFrame(animate);
   primitives.forEach((primitive) => {
@@ -90,5 +82,7 @@ function animate() {
     });
   });
   renderer.render(scene, camera);
+  rendererUp.render(scene, perspectiveCamera);
+  rendererDown.render(scene,ortographicCamera);
 }
 animate();
