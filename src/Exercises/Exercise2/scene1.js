@@ -1,5 +1,6 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 import {OrbitControls} from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
+import {FlyControls} from "https://unpkg.com/three/examples/jsm/controls/FlyControls.js";
 import addPrimitives from "./primitives.js";
 
 // Setup scene
@@ -26,8 +27,26 @@ const perspectiveCamera = new THREE.PerspectiveCamera(75,
 
 const ortographicCamera = new THREE.OrthographicCamera(-5, 5, 5, -5, 1, 1000);
 
-// Append renderer to index.html body
-renderingBox.appendChild(renderer.domElement);
+// Setup orbit controls
+// Fly controls
+// Set the clock for the fly controls 
+const clock = new THREE.Clock();
+const controls = new FlyControls(perspectiveCamera, rendererUp.domElement);
+controls.movementSpeed = 1000;
+controls.domElement = rendererUp.domElement;
+controls.rollSpeed = Math.PI / 24;
+controls.autoForward = false;
+controls.dragToLook = false;
+
+// Orbit controls
+const controls2 = new OrbitControls(ortographicCamera, rendererDown.domElement);
+controls2.target.set(27, 0, 0);
+controls2.listenToKeyEvents(window); // optional
+
+
+// Append renderers to index.html elements
+renderingBoxUp.appendChild(rendererUp.domElement);
+renderingBoxDown.appendChild(rendererDown.domElement);
 
 const light = new THREE.DirectionalLight(0xffffff);
 light.position.set(0, 1, 1).normalize();
@@ -81,7 +100,9 @@ function animate() {
       element.rotation.y += 0.01;
     });
   });
-  renderer.render(scene, camera);
+  controls.movementSpeed = 10;
+  controls.rollSpeed = 1;
+  controls.update( clock.getDelta() );
   rendererUp.render(scene, perspectiveCamera);
   rendererDown.render(scene,ortographicCamera);
 }
