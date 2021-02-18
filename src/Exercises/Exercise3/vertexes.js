@@ -247,4 +247,4 @@ const vertexes = [
   { pos: [0.5, -1  , -0.5], norm: [-1,  0,  0], uv: [0.25, 0.75], }, // 191
 ];
 
-export default vertices;
+export default vertexes;
