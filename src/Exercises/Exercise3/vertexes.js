@@ -1,4 +1,4 @@
-const vertices = [
+const vertexes = [
   // front
   // 1
   { pos: [-1,   -1,  1], norm: [0,  0,  1], uv: [0,    0], }, // 0
