@@ -1,6 +1,6 @@
 import * as THREE from 'https://unpkg.com/three/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
-import vertexes from './vertexes.js'
+import vertices from './vertices.js';
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -28,7 +28,7 @@ function main() {
     scene.add(light);
   }
 
-  const vertices = vertexes;
+  // Vertices array pulled from vertices.js file
   const numVertices = vertices.length;
   const positionNumComponents = 3;
   const normalNumComponents = 3;

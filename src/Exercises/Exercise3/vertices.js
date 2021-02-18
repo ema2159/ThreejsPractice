@@ -1,4 +1,4 @@
-const vertexes = [
+const vertices = [
   // front
   // 1
   { pos: [-1,   -1,  1], norm: [0,  0,  1], uv: [0,    0], }, // 0
@@ -247,4 +247,4 @@ const vertexes = [
   { pos: [0.5, -1  , -0.5], norm: [-1,  0,  0], uv: [0.25, 0.75], }, // 191
 ];
 
-export default vertexes;
+export default vertices;
