@@ -42,6 +42,18 @@ const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.3, 32);
 const baseDisc = new THREE.Mesh(cylinderGeometry, metal1);
 baseDisc.position.set(0, -2, -5);
 scene.add(baseDisc);
+
+// Rotation base disc (D2)
+const cylinderGeometry2 = new THREE.CylinderGeometry(0.6, 0.6, 0.2, 32);
+const baseDisc2 = new THREE.Mesh(cylinderGeometry2, metal1);
+scene.add(baseDisc2);
+// Create pivot point between base disc and rotation base disc (D1 to D2)
+const pivotPointD1toD2 = new THREE.Object3D();
+baseDisc.add(pivotPointD1toD2);
+// Set base disc 1 (D1) as reference for base disc 2 (D2)
+pivotPointD1toD2.add(baseDisc2);
+// Set position from base disc 2
+baseDisc2.position.set(0, 0.2, 0);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
