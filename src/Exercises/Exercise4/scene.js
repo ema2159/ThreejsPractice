@@ -137,6 +137,17 @@ pivotPointD5toUB.add(upperBase);
 upperBase.position.set(0.1, -0.3, 0.05);
 upperBase.rotation.x = Math.PI/2
 upperBase.rotation.z = -Math.PI/3
+
+// Rotation cylinder (RC)
+const cylinderGeometry8 = new THREE.CylinderGeometry(0.15, 0.15, 1, 32);
+const rotationCylinder = new THREE.Mesh(cylinderGeometry8, metal1);
+scene.add(rotationCylinder);
+// Create pivot point between upper base and rotation cylinder (UB to RC)
+const pivotPointUBtoRC = new THREE.Object3D();
+upperBase.add(pivotPointUBtoRC);
+// Set upper base (UB) as reference for rotation cylinder (RC)
+pivotPointUBtoRC.add(rotationCylinder);
+rotationCylinder.position.set(0.0, 0.7, 0.0);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
