@@ -78,6 +78,17 @@ arm1.add(pivotPointA1toD3);
 pivotPointA1toD3.add(rotationDisc1);
 rotationDisc1.position.set(0, 0.4, 0.1);
 rotationDisc1.rotation.x = Math.PI/2
+
+// Rotation disc 2 (D4)
+const cylinderGeometry4 = new THREE.CylinderGeometry(0.2, 0.3, 0.1, 32);
+const rotationDisc2 = new THREE.Mesh(cylinderGeometry4, metal1);
+scene.add(rotationDisc2);
+// Create pivot point between rotation disc 1 and rotation disc 2 (D3 to D4)
+const pivotPointD3toD4 = new THREE.Object3D();
+rotationDisc1.add(pivotPointD3toD4);
+// Set rotation disc 1 (D3) as reference for rotation disc 2 (D4)
+pivotPointD3toD4.add(rotationDisc2);
+rotationDisc2.position.set(0, 0.3, 0);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
