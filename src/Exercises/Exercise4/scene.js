@@ -164,22 +164,22 @@ pliersBase.position.set(0, 0.7, 0);
 const cylinderGeometry10 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
 const pliersDisc1 = new THREE.Mesh(cylinderGeometry10, metal1);
 scene.add(pliersDisc1);
-// Create pivot point between upper base and rotation cylinder (UB to RC)
+// Create pivot point between pliers base and pliers disc 1 (PB to PD1)
 const pivotPointPBtoPD1 = new THREE.Object3D();
 pliersBase.add(pivotPointPBtoPD1);
-// Set upper base (UB) as reference for rotation cylinder (RC)
+// Set pliers base (PB) as reference for pliers disc 1 (PD1)
 pivotPointPBtoPD1.add(pliersDisc1);
 pliersDisc1.position.set(0.0, 0.23, 0.175);
 pliersDisc1.rotation.x += Math.PI/2;
 
-// Pliers disc 2 (PD1)
+// Pliers disc 2 (PD2)
 const cylinderGeometry11 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
 const pliersDisc2 = new THREE.Mesh(cylinderGeometry11, metal1);
 scene.add(pliersDisc2);
-// Create pivot point between upper base and rotation cylinder (UB to RC)
+// Create pivot point between pliers base and pliers disc 2 (PB to PD2)
 const pivotPointPBtoPD2 = new THREE.Object3D();
 pliersBase.add(pivotPointPBtoPD2);
-// Set upper base (UB) as reference for rotation cylinder (RC)
+// Set pliers base (PB) as reference for pliers disc 2 (PD2)
 pivotPointPBtoPD2.add(pliersDisc2);
 pliersDisc2.position.set(0.0, 0.23, -0.175);
 pliersDisc2.rotation.x += Math.PI/2;
