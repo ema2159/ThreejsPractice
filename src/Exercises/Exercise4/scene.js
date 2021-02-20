@@ -197,6 +197,17 @@ pivotPointPBtoPRC.position.set(0.0, 0.3, 0);
 pliersRotationCylinder.position.set(0.0, 0.2, 0);
 pivotPointPBtoPRC.rotation.z += Math.PI/6;
 
+// Pliers rotation cylinder 2 (PRC2)
+const cylinderGeometry13 = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
+const pliersRotationCylinder2 = new THREE.Mesh(cylinderGeometry13, metal1);
+scene.add(pliersRotationCylinder2);
+// Create pivot point between pliers rotation cylinder and pliers rotation cylinder 2 (PRC to PRC2)
+const pivotPointPRCtoPRC2 = new THREE.Object3D();
+pliersRotationCylinder.add(pivotPointPRCtoPRC2);
+// Set pliers rotation cylinder (PCR) as reference for pliers rotation cylinder 2 (PRC2)
+pivotPointPRCtoPRC2.add(pliersRotationCylinder2);
+pliersRotationCylinder2.position.set(0.0, 0.1, 0);
+
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
