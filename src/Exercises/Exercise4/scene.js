@@ -148,6 +148,17 @@ upperBase.add(pivotPointUBtoRC);
 // Set upper base (UB) as reference for rotation cylinder (RC)
 pivotPointUBtoRC.add(rotationCylinder);
 rotationCylinder.position.set(0.0, 0.7, 0.0);
+
+// Pliers base (PB)
+const pliersBaseGeometry2 = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+const pliersBase = new THREE.Mesh(pliersBaseGeometry2, metal1);
+scene.add(pliersBase);
+// Create pivot point between Rotation cylinder and pliers base (RC to PB)
+const pivotPointRCtoPB = new THREE.Object3D();
+rotationCylinder.add(pivotPointRCtoPB);
+// Set rotation cylinder (RC) as reference for pliers base (PB)
+pivotPointRCtoPB.add(pliersBase);
+pliersBase.position.set(0, 0.7, 0);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
