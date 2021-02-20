@@ -124,6 +124,19 @@ rotationDisc3.add(pivotPointD5toD6);
 // Set rotation disc 3 (D5) as reference for rotation disc 4 (D6)
 pivotPointD5toD6.add(rotationDisc4);
 rotationDisc4.position.set(0, 0.3, 0);
+
+// Upper base (UB)
+const cylinderGeometry7 = new THREE.CylinderGeometry(0.2, 0.3, 0.8, 32);
+const upperBase = new THREE.Mesh(cylinderGeometry7, metal1);
+scene.add(upperBase);
+// Create pivot point between rotation disc 3 and upper base (D5 to UB)
+const pivotPointD5toUB = new THREE.Object3D();
+rotationDisc3.add(pivotPointD5toUB);
+// Set rotation disc 3 (D5) as reference for upper base (UB)
+pivotPointD5toUB.add(upperBase);
+upperBase.position.set(0.1, -0.3, 0.05);
+upperBase.rotation.x = Math.PI/2
+upperBase.rotation.z = -Math.PI/3
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
