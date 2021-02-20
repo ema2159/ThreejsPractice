@@ -36,6 +36,12 @@ scene.add(light);
 
 // Materials
 const metal1 = new THREE.MeshNormalMaterial();
+
+// Base disc (D1)
+const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.3, 32);
+const baseDisc = new THREE.Mesh(cylinderGeometry, metal1);
+baseDisc.position.set(0, -2, -5);
+scene.add(baseDisc);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
