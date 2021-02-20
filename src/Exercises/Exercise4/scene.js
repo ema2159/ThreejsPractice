@@ -30,16 +30,34 @@ controls.listenToKeyEvents(window); // optional
 // Append renderer to index.html body
 document.body.appendChild(renderer.domElement);
 
-const light = new THREE.DirectionalLight(0xffffff);
-light.position.set(0, 1, 1).normalize();
+const light = new THREE.DirectionalLight(0xffffff, 3);
+light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 // Materials
-const metal1 = new THREE.MeshNormalMaterial();
+const metal1 =  new THREE.MeshStandardMaterial( {
+  color: 0xFB8526,
+  metalness: 1.0,
+  roughness: 0.5,
+  ambientIntensity: 0.2,
+  aoMapIntensity: 1.0,
+  envMapIntensity: 1.0,
+  normalScale: 1.0
+});
+
+const metal2 =  new THREE.MeshStandardMaterial( {
+  color: 0x0A0A0A,
+  metalness: 1.0,
+  roughness: 0.4,
+  ambientIntensity: 0.2,
+  aoMapIntensity: 1.0,
+  envMapIntensity: 1.0,
+  normalScale: 1.0
+});
 
 // Base disc (D1)
 const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.3, 32);
-const baseDisc = new THREE.Mesh(cylinderGeometry, metal1);
+const baseDisc = new THREE.Mesh(cylinderGeometry, metal2);
 baseDisc.position.set(0, -2, -5);
 scene.add(baseDisc);
 
@@ -81,7 +99,7 @@ rotationDisc1.rotation.x = Math.PI/2
 
 // Rotation disc 2 (D4)
 const cylinderGeometry4 = new THREE.CylinderGeometry(0.2, 0.3, 0.1, 32);
-const rotationDisc2 = new THREE.Mesh(cylinderGeometry4, metal1);
+const rotationDisc2 = new THREE.Mesh(cylinderGeometry4, metal2);
 scene.add(rotationDisc2);
 // Create pivot point between rotation disc 1 and rotation disc 2 (D3 to D4)
 const pivotPointD3toD4 = new THREE.Object3D();
@@ -116,7 +134,7 @@ rotationDisc3.rotation.x = Math.PI/2
 
 // Rotation disc 4 (D6)
 const cylinderGeometry6 = new THREE.CylinderGeometry(0.15, 0.25, 0.1, 32);
-const rotationDisc4 = new THREE.Mesh(cylinderGeometry6, metal1);
+const rotationDisc4 = new THREE.Mesh(cylinderGeometry6, metal2);
 scene.add(rotationDisc4);
 // Create pivot point between rotation disc 3 and rotation disc 4 (D5 to D6)
 const pivotPointD5toD6 = new THREE.Object3D();
@@ -140,7 +158,7 @@ upperBase.rotation.z = -Math.PI/3
 
 // Rotation cylinder (RC)
 const cylinderGeometry8 = new THREE.CylinderGeometry(0.15, 0.15, 1, 32);
-const rotationCylinder = new THREE.Mesh(cylinderGeometry8, metal1);
+const rotationCylinder = new THREE.Mesh(cylinderGeometry8, metal2);
 scene.add(rotationCylinder);
 // Create pivot point between upper base and rotation cylinder (UB to RC)
 const pivotPointUBtoRC = new THREE.Object3D();
@@ -186,7 +204,7 @@ pliersDisc2.rotation.x += Math.PI/2;
 
 // Pliers rotation cylinder (PRC)
 const cylinderGeometry12 = new THREE.CylinderGeometry(0.155, 0.155, 0.4, 32);
-const pliersRotationCylinder = new THREE.Mesh(cylinderGeometry12, metal1);
+const pliersRotationCylinder = new THREE.Mesh(cylinderGeometry12, metal2);
 scene.add(pliersRotationCylinder);
 // Create pivot point between pliers base and pliers rotation cylinder (PB to PRC)
 const pivotPointPBtoPRC = new THREE.Object3D();
