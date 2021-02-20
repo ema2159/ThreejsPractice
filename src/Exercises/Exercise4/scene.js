@@ -56,14 +56,14 @@ const metal2 =  new THREE.MeshStandardMaterial( {
 });
 
 // Base disc (D1)
-const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 0.3, 32);
-const baseDisc = new THREE.Mesh(cylinderGeometry, metal2);
+const cylinderGeometryD1 = new THREE.CylinderGeometry(1, 1, 0.3, 32);
+const baseDisc = new THREE.Mesh(cylinderGeometryD1, metal2);
 baseDisc.position.set(0, -2, -5);
 scene.add(baseDisc);
 
 // Rotation base disc (D2)
-const cylinderGeometry2 = new THREE.CylinderGeometry(0.6, 0.6, 0.2, 32);
-const baseDisc2 = new THREE.Mesh(cylinderGeometry2, metal1);
+const cylinderGeometryD2 = new THREE.CylinderGeometry(0.6, 0.6, 0.2, 32);
+const baseDisc2 = new THREE.Mesh(cylinderGeometryD2, metal1);
 scene.add(baseDisc2);
 // Create pivot point between base disc and rotation base disc (D1 to D2)
 const pivotPointD1toD2 = new THREE.Object3D();
@@ -74,8 +74,8 @@ pivotPointD1toD2.add(baseDisc2);
 baseDisc2.position.set(0, 0.2, 0);
 
 // Arm 1 (A1)
-const armGeometry1 = new THREE.BoxGeometry(0.4, 0.8, 0.3);
-const arm1 = new THREE.Mesh(armGeometry1, metal1);
+const boxGeometryA1 = new THREE.BoxGeometry(0.4, 0.8, 0.3);
+const arm1 = new THREE.Mesh(boxGeometryA1, metal1);
 scene.add(arm1);
 // Create pivot point between base disc 2 and arm 1 (D2 to A1)
 const pivotPointD2toA1 = new THREE.Object3D();
@@ -86,8 +86,8 @@ arm1.position.set(0, 0.3, 0);
 pivotPointD2toA1.rotation.z = Math.PI/4
 
 // Rotation disc 1 (D3)
-const cylinderGeometry3 = new THREE.CylinderGeometry(0.3, 0.3, 0.5, 32);
-const rotationDisc1 = new THREE.Mesh(cylinderGeometry3, metal1);
+const cylinderGeometryD3 = new THREE.CylinderGeometry(0.3, 0.3, 0.5, 32);
+const rotationDisc1 = new THREE.Mesh(cylinderGeometryD3, metal1);
 scene.add(rotationDisc1);
 // Create pivot point between arm 1 and rotation disc 1 (A1 to D3)
 const pivotPointA1toD3 = new THREE.Object3D();
@@ -97,20 +97,20 @@ pivotPointA1toD3.add(rotationDisc1);
 rotationDisc1.position.set(0, 0.4, 0.1);
 rotationDisc1.rotation.x = Math.PI/2
 
-// Rotation disc 2 (D4)
-const cylinderGeometry4 = new THREE.CylinderGeometry(0.2, 0.3, 0.1, 32);
-const rotationDisc2 = new THREE.Mesh(cylinderGeometry4, metal2);
+// Decoration disc 1 (D4)
+const cylinderGeometryD4 = new THREE.CylinderGeometry(0.2, 0.3, 0.1, 32);
+const rotationDisc2 = new THREE.Mesh(cylinderGeometryD4, metal2);
 scene.add(rotationDisc2);
-// Create pivot point between rotation disc 1 and rotation disc 2 (D3 to D4)
+// Create pivot point between rotation disc 1 and decoration disc 1 (D3 to D4)
 const pivotPointD3toD4 = new THREE.Object3D();
 rotationDisc1.add(pivotPointD3toD4);
-// Set rotation disc 1 (D3) as reference for rotation disc 2 (D4)
+// Set rotation disc 1 (D3) as reference for decoration disc 1 (D4)
 pivotPointD3toD4.add(rotationDisc2);
 rotationDisc2.position.set(0, 0.3, 0);
 
 // Arm 2 (A2)
-const armGeometry2 = new THREE.BoxGeometry(0.4, 1.8, 0.15);
-const arm2 = new THREE.Mesh(armGeometry2, metal1);
+const boxGeometryA2 = new THREE.BoxGeometry(0.4, 1.8, 0.15);
+const arm2 = new THREE.Mesh(boxGeometryA2, metal1);
 scene.add(arm2);
 // Create pivot point between rotation disc 1 and arm 2 (A2 to D3)
 const pivotPointA2toD3 = new THREE.Object3D();
@@ -120,45 +120,45 @@ pivotPointA2toD3.add(arm2);
 arm2.position.set(0, 1, 0.15);
 pivotPointA2toD3.rotation.x = -Math.PI/2
 
-// Rotation disc 3 (D5)
-const cylinderGeometry5 = new THREE.CylinderGeometry(0.25, 0.25, 0.5, 32);
-const rotationDisc3 = new THREE.Mesh(cylinderGeometry5, metal1);
-scene.add(rotationDisc3);
-// Create pivot point between arm 2 and rotation disc 3 (A2 to D5)
-const pivotPointA2toD5 = new THREE.Object3D();
-arm2.add(pivotPointA2toD5);
-// Set arm (A2) as reference for rotation disc 3 (D5)
-pivotPointA2toD5.add(rotationDisc3);
-rotationDisc3.position.set(0, 0.755, -0.15);
-rotationDisc3.rotation.x = Math.PI/2
-
-// Rotation disc 4 (D6)
-const cylinderGeometry6 = new THREE.CylinderGeometry(0.15, 0.25, 0.1, 32);
-const rotationDisc4 = new THREE.Mesh(cylinderGeometry6, metal2);
+// Rotation disc 3 (D6)
+const cylinderGeometryD6 = new THREE.CylinderGeometry(0.25, 0.25, 0.5, 32);
+const rotationDisc4 = new THREE.Mesh(cylinderGeometryD6, metal1);
 scene.add(rotationDisc4);
-// Create pivot point between rotation disc 3 and rotation disc 4 (D5 to D6)
-const pivotPointD5toD6 = new THREE.Object3D();
-rotationDisc3.add(pivotPointD5toD6);
-// Set rotation disc 3 (D5) as reference for rotation disc 4 (D6)
-pivotPointD5toD6.add(rotationDisc4);
-rotationDisc4.position.set(0, 0.3, 0);
+// Create pivot point between arm 2 and rotation disc 3 (A2 to D6)
+const pivotPointA2toD6 = new THREE.Object3D();
+arm2.add(pivotPointA2toD6);
+// Set arm (A2) as reference for rotation disc 3 (D6)
+pivotPointA2toD6.add(rotationDisc4);
+rotationDisc4.position.set(0, 0.755, -0.15);
+rotationDisc4.rotation.x = Math.PI/2
+
+// Rotation disc 4 (D7)
+const cylinderGeometryD7 = new THREE.CylinderGeometry(0.15, 0.25, 0.1, 32);
+const rotationDisc5 = new THREE.Mesh(cylinderGeometryD7, metal2);
+scene.add(rotationDisc5);
+// Create pivot point between rotation disc 3 and rotation disc 4 (D6 to D7)
+const pivotPointD6toD7 = new THREE.Object3D();
+rotationDisc4.add(pivotPointD6toD7);
+// Set rotation disc 3 (D6) as reference for rotation disc 4 (D7)
+pivotPointD6toD7.add(rotationDisc5);
+rotationDisc5.position.set(0, 0.3, 0);
 
 // Upper base (UB)
-const cylinderGeometry7 = new THREE.CylinderGeometry(0.2, 0.3, 0.8, 32);
-const upperBase = new THREE.Mesh(cylinderGeometry7, metal1);
+const cylinderGeometryUB = new THREE.CylinderGeometry(0.2, 0.3, 0.8, 32);
+const upperBase = new THREE.Mesh(cylinderGeometryUB, metal1);
 scene.add(upperBase);
-// Create pivot point between rotation disc 3 and upper base (D5 to UB)
-const pivotPointD5toUB = new THREE.Object3D();
-rotationDisc3.add(pivotPointD5toUB);
-// Set rotation disc 3 (D5) as reference for upper base (UB)
-pivotPointD5toUB.add(upperBase);
+// Create pivot point between rotation disc 3 and upper base (D6 to UB)
+const pivotPointD6toUB = new THREE.Object3D();
+rotationDisc4.add(pivotPointD6toUB);
+// Set rotation disc 3 (D6) as reference for upper base (UB)
+pivotPointD6toUB.add(upperBase);
 upperBase.position.set(0.1, -0.3, 0.05);
 upperBase.rotation.x = Math.PI/2
 upperBase.rotation.z = -Math.PI/3
 
 // Rotation cylinder (RC)
-const cylinderGeometry8 = new THREE.CylinderGeometry(0.15, 0.15, 1, 32);
-const rotationCylinder = new THREE.Mesh(cylinderGeometry8, metal2);
+const cylinderGeometryRC = new THREE.CylinderGeometry(0.15, 0.15, 1, 32);
+const rotationCylinder = new THREE.Mesh(cylinderGeometryRC, metal2);
 scene.add(rotationCylinder);
 // Create pivot point between upper base and rotation cylinder (UB to RC)
 const pivotPointUBtoRC = new THREE.Object3D();
@@ -168,8 +168,8 @@ pivotPointUBtoRC.add(rotationCylinder);
 rotationCylinder.position.set(0.0, 0.7, 0.0);
 
 // Pliers base (PB)
-const pliersBaseGeometry2 = new THREE.BoxGeometry(0.4, 0.4, 0.4);
-const pliersBase = new THREE.Mesh(pliersBaseGeometry2, metal1);
+const boxGeometryPB = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+const pliersBase = new THREE.Mesh(boxGeometryPB, metal1);
 scene.add(pliersBase);
 // Create pivot point between Rotation cylinder and pliers base (RC to PB)
 const pivotPointRCtoPB = new THREE.Object3D();
@@ -179,8 +179,8 @@ pivotPointRCtoPB.add(pliersBase);
 pliersBase.position.set(0, 0.7, 0);
 
 // Pliers disc 1 (PD1)
-const cylinderGeometry10 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
-const pliersDisc1 = new THREE.Mesh(cylinderGeometry10, metal1);
+const cylinderGeometryPD1 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
+const pliersDisc1 = new THREE.Mesh(cylinderGeometryPD1, metal1);
 scene.add(pliersDisc1);
 // Create pivot point between pliers base and pliers disc 1 (PB to PD1)
 const pivotPointPBtoPD1 = new THREE.Object3D();
@@ -191,8 +191,8 @@ pliersDisc1.position.set(0.0, 0.23, 0.175);
 pliersDisc1.rotation.x += Math.PI/2;
 
 // Pliers disc 2 (PD2)
-const cylinderGeometry11 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
-const pliersDisc2 = new THREE.Mesh(cylinderGeometry11, metal1);
+const cylinderGeometryPD2 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
+const pliersDisc2 = new THREE.Mesh(cylinderGeometryPD2, metal1);
 scene.add(pliersDisc2);
 // Create pivot point between pliers base and pliers disc 2 (PB to PD2)
 const pivotPointPBtoPD2 = new THREE.Object3D();
@@ -203,8 +203,8 @@ pliersDisc2.position.set(0.0, 0.23, -0.175);
 pliersDisc2.rotation.x += Math.PI/2;
 
 // Pliers rotation cylinder (PRC)
-const cylinderGeometry12 = new THREE.CylinderGeometry(0.155, 0.155, 0.4, 32);
-const pliersRotationCylinder = new THREE.Mesh(cylinderGeometry12, metal2);
+const cylinderGeometryPRC = new THREE.CylinderGeometry(0.155, 0.155, 0.4, 32);
+const pliersRotationCylinder = new THREE.Mesh(cylinderGeometryPRC, metal2);
 scene.add(pliersRotationCylinder);
 // Create pivot point between pliers base and pliers rotation cylinder (PB to PRC)
 const pivotPointPBtoPRC = new THREE.Object3D();
@@ -216,8 +216,8 @@ pliersRotationCylinder.position.set(0.0, 0.2, 0);
 pivotPointPBtoPRC.rotation.z += Math.PI/6;
 
 // Pliers rotation cylinder 2 (PRC2)
-const cylinderGeometry13 = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
-const pliersRotationCylinder2 = new THREE.Mesh(cylinderGeometry13, metal1);
+const cylinderGeometryPRC2 = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
+const pliersRotationCylinder2 = new THREE.Mesh(cylinderGeometryPRC2, metal1);
 scene.add(pliersRotationCylinder2);
 // Create pivot point between pliers rotation cylinder and pliers rotation cylinder 2 (PRC to PRC2)
 const pivotPointPRCtoPRC2 = new THREE.Object3D();
@@ -227,8 +227,8 @@ pivotPointPRCtoPRC2.add(pliersRotationCylinder2);
 pliersRotationCylinder2.position.set(0.0, 0.05, 0);
 
 // Pliers box (PBx)
-const pliersBoxGeometry = new THREE.BoxGeometry(0.1, 0.155, 0.5);
-const pliersBox = new THREE.Mesh(pliersBoxGeometry, metal2);
+const boxGeometryPBx = new THREE.BoxGeometry(0.1, 0.155, 0.5);
+const pliersBox = new THREE.Mesh(boxGeometryPBx, metal2);
 scene.add(pliersBox);
 // Create pivot point between pliers rotation cylinder and pliers box (PRC to PBx)
 const pivotPointPRCtoPBx = new THREE.Object3D();
