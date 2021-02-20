@@ -54,6 +54,18 @@ baseDisc.add(pivotPointD1toD2);
 pivotPointD1toD2.add(baseDisc2);
 // Set position from base disc 2
 baseDisc2.position.set(0, 0.2, 0);
+
+// Arm 1 (A1)
+const armGeometry1 = new THREE.BoxGeometry(0.4, 0.8, 0.3);
+const arm1 = new THREE.Mesh(armGeometry1, metal1);
+scene.add(arm1);
+// Create pivot point between base disc 2 and arm 1 (D2 to A1)
+const pivotPointD2toA1 = new THREE.Object3D();
+baseDisc2.add(pivotPointD2toA1);
+// Set base disc 2 (D2) as reference for arm (A1)
+pivotPointD2toA1.add(arm1);
+arm1.position.set(0, 0.3, 0);
+pivotPointD2toA1.rotation.z = Math.PI/4
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
