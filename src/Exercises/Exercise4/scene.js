@@ -34,6 +34,8 @@ const light = new THREE.DirectionalLight(0xffffff);
 light.position.set(0, 1, 1).normalize();
 scene.add(light);
 
+// Materials
+const metal1 = new THREE.MeshNormalMaterial();
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
