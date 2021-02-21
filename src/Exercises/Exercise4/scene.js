@@ -3,7 +3,7 @@ import {OrbitControls} from "https://unpkg.com/three/examples/jsm/controls/Orbit
 
 // Setup scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x21272e);
+scene.background = new THREE.Color(0xDADADA);
 
 // Camera configuration
 // Parameters: FOV, aspect ratio, minimum rendering distance, maximum rendering distance
