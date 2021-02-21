@@ -300,7 +300,6 @@ function createRobot(scene) {
     pivotPointPH1toPGB2.rotation.x,
     pivotPointPH1toPGB1.rotation.x,
   ];
-  console.log(normalizationAngles);
 
   // Values to comply with Kinestetics API
   const robotGeometry = [V0, V1, V2, V3, V4];
