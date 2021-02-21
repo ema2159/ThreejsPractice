@@ -292,7 +292,7 @@ scene.add(pliersGrabber1);
 // Create pivot point between pliers grabber base 1 and pliers grabber 1 (PGB1 to PG1)
 const pivotPointPGB1toPG1 = new THREE.Object3D();
 pliersGrabberBase1.add(pivotPointPGB1toPG1);
-// Set pliers rotation grabber base 1 (PCR) as reference for pliers grabber 1 (PG1)
+// Set pliers rotation grabber base 1 (PGB1) as reference for pliers grabber 1 (PG1)
 pivotPointPGB1toPG1.add(pliersGrabber1);
 pliersGrabber1.position.set(0, 0.2, 0.1);
 
