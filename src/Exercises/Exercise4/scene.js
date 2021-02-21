@@ -226,27 +226,27 @@ pivotPointPBtoPRC.position.set(0.0, 0.3, 0);
 pliersRotationCylinder.position.set(0.0, 0.2, 0);
 pivotPointPBtoPRC.rotation.z += Math.PI/6;
 
-// Pliers rotation cylinder 2 (PRC2)
-const cylinderGeometryPRC2 = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
-const pliersRotationCylinder2 = new THREE.Mesh(cylinderGeometryPRC2, metal1);
-scene.add(pliersRotationCylinder2);
-// Create pivot point between pliers rotation cylinder and pliers rotation cylinder 2 (PRC to PRC2)
-const pivotPointPRCtoPRC2 = new THREE.Object3D();
-pliersRotationCylinder.add(pivotPointPRCtoPRC2);
-// Set pliers rotation cylinder (PCR) as reference for pliers rotation cylinder 2 (PRC2)
-pivotPointPRCtoPRC2.add(pliersRotationCylinder2);
-pliersRotationCylinder2.position.set(0.0, 0.05, 0);
+// Pliers decoration cylinder 2 (PDC)
+const cylinderGeometryPDC = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
+const pliersDecorationCylinder2 = new THREE.Mesh(cylinderGeometryPDC, metal1);
+scene.add(pliersDecorationCylinder2);
+// Create pivot point between pliers decoration cylinder and pliers decoration cylinder 2 (PRC to PDC)
+const pivotPointPRCtoPDC = new THREE.Object3D();
+pliersRotationCylinder.add(pivotPointPRCtoPDC);
+// Set pliers decoration cylinder (PCR) as reference for pliers decoration cylinder 2 (PDC)
+pivotPointPRCtoPDC.add(pliersDecorationCylinder2);
+pliersDecorationCylinder2.position.set(0.0, 0.05, 0);
 
-// Pliers box (PBx)
-const boxGeometryPBx = new THREE.BoxGeometry(0.1, 0.155, 0.5);
-const pliersBox = new THREE.Mesh(boxGeometryPBx, metal2);
-scene.add(pliersBox);
-// Create pivot point between pliers rotation cylinder and pliers box (PRC to PBx)
-const pivotPointPRCtoPBx = new THREE.Object3D();
-pliersRotationCylinder.add(pivotPointPRCtoPBx);
-// Set pliers rotation cylinder (PCR) as reference for pliers box (PBx)
-pivotPointPRCtoPBx.add(pliersBox);
-pliersBox.position.set(0.0, 0.2, 0);
+// Pliers holder 1 (PH1)
+const boxGeometryPH1 = new THREE.BoxGeometry(0.03, 0.155, 0.5);
+const pliersHolder1 = new THREE.Mesh(boxGeometryPH1, metal2);
+scene.add(pliersHolder1);
+// Create pivot point between pliers rotation cylinder and pliers holder 1 (PRC to PH1)
+const pivotPointPRCtoPH1 = new THREE.Object3D();
+pliersRotationCylinder.add(pivotPointPRCtoPH1);
+// Set pliers rotation cylinder (PCR) as reference for pliers holder 1 (PH1)
+pivotPointPRCtoPH1.add(pliersHolder1);
+pliersHolder1.position.set(0.05, 0.2, 0);
 
 function animate() {
   requestAnimationFrame(animate);
