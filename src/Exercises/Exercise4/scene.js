@@ -260,8 +260,8 @@ pivotPointPRCtoPH2.add(pliersHolder2);
 pliersHolder2.position.set(-0.05, 0.2, 0);
 
 // Pliers grabber base 1 (PGB1)
-const boxGeometryPBG1 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
-const pliersGrabberBase1 = new THREE.Mesh(boxGeometryPBG1, metal2);
+const boxGeometryPGB1 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
+const pliersGrabberBase1 = new THREE.Mesh(boxGeometryPGB1, metal2);
 scene.add(pliersGrabberBase1);
 // Create pivot point between pliers holder 1 and pliers grabber base 1 (PH1 to PGB1)
 const pivotPointPH1toPGB1 = new THREE.Object3D();
