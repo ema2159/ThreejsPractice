@@ -296,6 +296,17 @@ pliersGrabberBase1.add(pivotPointPGB1toPG1);
 pivotPointPGB1toPG1.add(pliersGrabber1);
 pliersGrabber1.position.set(0, 0.2, 0.1);
 
+// Pliers grabber 2 (PG2)
+const coneGeometryPG2 = new THREE.ConeGeometry(0.05, 0.5, 3);
+const pliersGrabber2 = new THREE.Mesh(coneGeometryPG2, metal2);
+scene.add(pliersGrabber2);
+// Create pivot point between pliers grabber base 2 and pliers grabber 2 (PGB1 to PG2)
+const pivotPointPGB2toPG2 = new THREE.Object3D();
+pliersGrabberBase2.add(pivotPointPGB2toPG2);
+// Set pliers rotation grabber base 2 (PGB2) as reference for pliers grabber 2 (PG2)
+pivotPointPGB2toPG2.add(pliersGrabber2);
+pliersGrabber2.position.set(0, 0.2, -0.1);
+
 // baseDisc2.rotation.y -= Math.PI/2 + 0.5;
 
 function animate() {
