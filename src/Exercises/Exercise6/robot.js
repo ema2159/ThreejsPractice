@@ -53,7 +53,7 @@ function createRobot(scene) {
   pivotPointD2toA1.add(arm1);
   arm1.position.set(0, 0.3, 0);
   pivotPointD2toA1.rotation.z = Math.PI/4
-  const V0 = [A1Dims[1]*Math.cos(pivotPointD2toA1.rotation.z),
+  const V0 = [-A1Dims[1]*Math.cos(pivotPointD2toA1.rotation.z),
 	      A1Dims[1]*Math.sin(pivotPointD2toA1.rotation.z),
 	      0]
 	      
@@ -206,7 +206,7 @@ function createRobot(scene) {
   pivotPointPBtoPRC.position.set(0.0, 0.3, 0);
   pliersRotationCylinder.position.set(0.0, 0.2, 0);
   const V3 = [RCDims[2] + PBDims[2]/2 + PRCDims[0], 0, 0];
-  const V4 = [0, PRCDims[1], 0];
+  const V4 = [0, PRCDims[2], 0];
 
   // Pliers decoration cylinder 2 (PDC)
   const cylinderGeometryPDC = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
