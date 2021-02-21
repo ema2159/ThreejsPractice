@@ -258,6 +258,32 @@ pliersRotationCylinder.add(pivotPointPRCtoPH2);
 // Set pliers rotation cylinder (PCR) as reference for pliers holder 2 (PH2)
 pivotPointPRCtoPH2.add(pliersHolder2);
 pliersHolder2.position.set(-0.05, 0.2, 0);
+
+// Pliers grabber base 1 (PGB1)
+const boxGeometryPBG1 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
+const pliersGrabberBase1 = new THREE.Mesh(boxGeometryPBG1, metal2);
+scene.add(pliersGrabberBase1);
+// Create pivot point between pliers holder 1 and pliers grabber base 1 (PH1 to PGB1)
+const pivotPointPH1toPGB1 = new THREE.Object3D();
+pliersHolder1.add(pivotPointPH1toPGB1);
+// Set pliers rotation holder 1 (PCR) as reference for pliers grabber base 1 (PGB1)
+pivotPointPH1toPGB1.add(pliersGrabberBase1);
+pivotPointPH1toPGB1.position.set(0, 0, 0.18);
+pivotPointPH1toPGB1.rotation.x -= Math.PI/6;
+pliersGrabberBase1.position.set(-0.05, 0, 0.15);
+
+// Pliers grabber base 2 (PGB1)
+const boxGeometryPGB2 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
+const pliersGrabberBase2 = new THREE.Mesh(boxGeometryPGB2, metal2);
+scene.add(pliersGrabberBase2);
+// Create pivot point between pliers holder 2 and pliers grabber base 2 (PH1 to PGB2)
+const pivotPointPH1toPGB2 = new THREE.Object3D();
+pliersHolder1.add(pivotPointPH1toPGB2);
+// Set pliers rotation holder 2 (PCR) as reference for pliers grabber base 2 (PGB2)
+pivotPointPH1toPGB2.add(pliersGrabberBase2);
+pivotPointPH1toPGB2.position.set(0, 0, -0.18);
+pivotPointPH1toPGB2.rotation.x += Math.PI/6;
+pliersGrabberBase2.position.set(-0.05, 0, -0.15);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
