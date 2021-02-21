@@ -36,7 +36,6 @@ const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
-let robotControls = createRobot(scene);
 //Function to set all the angles for the robot
 // These are set to comply with Kinematics API
 function setRobotAngles(robotControls, A, normAngles) {
@@ -49,6 +48,8 @@ function setRobotAngles(robotControls, A, normAngles) {
   robotControls[6].rotation.x = A[6] + normAngles[6];
   robotControls[7].rotation.x = A[7] + normAngles[7];
 }
+
+const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 
 function animate() {
   requestAnimationFrame(animate);
