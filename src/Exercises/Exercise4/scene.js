@@ -307,8 +307,6 @@ pliersGrabberBase2.add(pivotPointPGB2toPG2);
 pivotPointPGB2toPG2.add(pliersGrabber2);
 pliersGrabber2.position.set(0, 0.2, -0.1);
 
-// baseDisc2.rotation.y -= Math.PI/2 + 0.5;
-
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
