@@ -51,6 +51,18 @@ function setRobotAngles(robotControls, A, normAngles) {
 
 const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 
+let angles = [0, -Math.PI/2, Math.PI/2, 0, 0, 0, 0, 0]
+
+console.log(robotGeometry);
+const RobotKin = new Kinematics(robotGeometry)
+const pose = RobotKin.forward(...angles)[5]
+console.log(pose);
+
+// angles = [...RobotKin.inverse(0, 0, 0, 0, 0, 0), 0, 0];
+// console.log(angles);
+
+setRobotAngles(robotControls, angles, normAngles);
+
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
