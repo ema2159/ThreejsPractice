@@ -120,7 +120,7 @@ function createRobot(scene) {
   rotationDisc4.rotation.x = Math.PI/2
   rotationDisc4.rotation.y -= 5*Math.PI/6
 
-  // Rotation disc 4 (D7)
+  // Decoration disc 3 (D7)
   const cylinderGeometryD7 = new THREE.CylinderGeometry(0.15, 0.25, 0.1, 32);
   const rotationDisc5 = new THREE.Mesh(cylinderGeometryD7, metal2);
   scene.add(rotationDisc5);
