@@ -51,10 +51,11 @@ function createRobot(scene) {
   baseDisc2.add(pivotPointD2toA1);
   // Set base disc 2 (D2) as reference for arm (A1)
   pivotPointD2toA1.add(arm1);
-  arm1.position.set(0, 0.3, 0);
+  const A1Position = [0, 0.3, 0];
+  arm1.position.set(...A1Position);
   pivotPointD2toA1.rotation.z = Math.PI/4
-  const V0 = [-A1Dims[1]*Math.cos(pivotPointD2toA1.rotation.z),
-	      A1Dims[1]*Math.sin(pivotPointD2toA1.rotation.z),
+  const V0 = [-((A1Dims[1]/2)+A1Position[1])*Math.cos(pivotPointD2toA1.rotation.z),
+	      ((A1Dims[1]/2)+A1Position[1])*Math.sin(pivotPointD2toA1.rotation.z),
 	      0]
 	      
 
