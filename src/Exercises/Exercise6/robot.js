@@ -31,7 +31,6 @@ function createRobot(scene) {
   // Rotation base disc (D2)
   const cylinderGeometryD2 = new THREE.CylinderGeometry(0.6, 0.6, 0.2, 32);
   const baseDisc2 = new THREE.Mesh(cylinderGeometryD2, metal1);
-  scene.add(baseDisc2);
   // Create pivot point between base disc and rotation base disc (D1 to D2)
   const pivotPointD1toD2 = new THREE.Object3D();
   baseDisc.add(pivotPointD1toD2);
@@ -45,7 +44,6 @@ function createRobot(scene) {
   const A1Dims = [0.4, 0.8, 0.3]; // length, height, depth
   const boxGeometryA1 = new THREE.BoxGeometry(...A1Dims);
   const arm1 = new THREE.Mesh(boxGeometryA1, metal1);
-  scene.add(arm1);
   // Create pivot point between base disc 2 and arm 1 (D2 to A1)
   const pivotPointD2toA1 = new THREE.Object3D();
   baseDisc2.add(pivotPointD2toA1);
@@ -62,7 +60,6 @@ function createRobot(scene) {
   // Rotation disc 1 (D3)
   const cylinderGeometryD3 = new THREE.CylinderGeometry(0.3, 0.3, 0.5, 32);
   const rotationDisc1 = new THREE.Mesh(cylinderGeometryD3, metal1);
-  scene.add(rotationDisc1);
   // Create pivot point between arm 1 and rotation disc 1 (A1 to D3)
   const pivotPointA1toD3 = new THREE.Object3D();
   arm1.add(pivotPointA1toD3);
@@ -75,7 +72,6 @@ function createRobot(scene) {
   // Decoration disc 1 (D4)
   const cylinderGeometryD4 = new THREE.CylinderGeometry(0.2, 0.3, 0.1, 32);
   const rotationDisc2 = new THREE.Mesh(cylinderGeometryD4, metal2);
-  scene.add(rotationDisc2);
   // Create pivot point between rotation disc 1 and decoration disc 1 (D3 to D4)
   const pivotPointD3toD4 = new THREE.Object3D();
   rotationDisc1.add(pivotPointD3toD4);
@@ -86,7 +82,6 @@ function createRobot(scene) {
   // Decoration disc 2 (D5)
   const cylinderGeometryD5 = new THREE.CylinderGeometry(0.3, 0.2, 0.1, 32);
   const rotationDisc3 = new THREE.Mesh(cylinderGeometryD5, metal2);
-  scene.add(rotationDisc3);
   // Create pivot point between rotation disc 1 and decoration disc 2 (D3 to D5)
   const pivotPointD3toD5 = new THREE.Object3D();
   rotationDisc1.add(pivotPointD3toD5);
@@ -98,7 +93,6 @@ function createRobot(scene) {
   const A2Dims = [0.4, 1.8, 0.15];
   const boxGeometryA2 = new THREE.BoxGeometry(...A2Dims);
   const arm2 = new THREE.Mesh(boxGeometryA2, metal1);
-  scene.add(arm2);
   // Create pivot point between rotation disc 1 and arm 2 (A2 to D3)
   const pivotPointA2toD3 = new THREE.Object3D();
   rotationDisc1.add(pivotPointA2toD3);
@@ -111,7 +105,6 @@ function createRobot(scene) {
   // Rotation disc 3 (D6)
   const cylinderGeometryD6 = new THREE.CylinderGeometry(0.25, 0.25, 0.5, 32);
   const rotationDisc4 = new THREE.Mesh(cylinderGeometryD6, metal1);
-  scene.add(rotationDisc4);
   // Create pivot point between arm 2 and rotation disc 3 (A2 to D6)
   const pivotPointA2toD6 = new THREE.Object3D();
   arm2.add(pivotPointA2toD6);
@@ -126,7 +119,6 @@ function createRobot(scene) {
   // Decoration disc 3 (D7)
   const cylinderGeometryD7 = new THREE.CylinderGeometry(0.15, 0.25, 0.1, 32);
   const rotationDisc5 = new THREE.Mesh(cylinderGeometryD7, metal2);
-  scene.add(rotationDisc5);
   // Create pivot point between rotation disc 3 and rotation disc 4 (D6 to D7)
   const pivotPointD6toD7 = new THREE.Object3D();
   rotationDisc4.add(pivotPointD6toD7);
@@ -137,7 +129,6 @@ function createRobot(scene) {
   // Upper base (UB)
   const cylinderGeometryUB = new THREE.CylinderGeometry(0.2, 0.3, 0.8, 32);
   const upperBase = new THREE.Mesh(cylinderGeometryUB, metal1);
-  scene.add(upperBase);
   // Create pivot point between rotation disc 3 and upper base (D6 to UB)
   const pivotPointD6toUB = new THREE.Object3D();
   rotationDisc4.add(pivotPointD6toUB);
@@ -153,7 +144,6 @@ function createRobot(scene) {
   const RCDims = [0.15, 0.15, 1.5];
   const cylinderGeometryRC = new THREE.CylinderGeometry(...RCDims, 32);
   const rotationCylinder = new THREE.Mesh(cylinderGeometryRC, metal2);
-  scene.add(rotationCylinder);
   // Create pivot point between upper base and rotation cylinder (UB to RC)
   const pivotPointUBtoRC = new THREE.Object3D();
   upperBase.add(pivotPointUBtoRC);
@@ -166,7 +156,6 @@ function createRobot(scene) {
   const PBDims = [0.4, 0.4, 0.4];
   const boxGeometryPB = new THREE.BoxGeometry(...PBDims);
   const pliersBase = new THREE.Mesh(boxGeometryPB, metal1);
-  scene.add(pliersBase);
   // Create pivot point between Rotation cylinder and pliers base (RC to PB)
   const pivotPointRCtoPB = new THREE.Object3D();
   rotationCylinder.add(pivotPointRCtoPB);
@@ -178,7 +167,6 @@ function createRobot(scene) {
   // Pliers disc 1 (PD1)
   const cylinderGeometryPD1 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
   const pliersDisc1 = new THREE.Mesh(cylinderGeometryPD1, metal1);
-  scene.add(pliersDisc1);
   // Create pivot point between pliers base and pliers disc 1 (PB to PD1)
   const pivotPointPBtoPD1 = new THREE.Object3D();
   pliersBase.add(pivotPointPBtoPD1);
@@ -190,7 +178,6 @@ function createRobot(scene) {
   // Pliers disc 2 (PD2)
   const cylinderGeometryPD2 = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 32);
   const pliersDisc2 = new THREE.Mesh(cylinderGeometryPD2, metal1);
-  scene.add(pliersDisc2);
   // Create pivot point between pliers base and pliers disc 2 (PB to PD2)
   const pivotPointPBtoPD2 = new THREE.Object3D();
   pliersBase.add(pivotPointPBtoPD2);
@@ -203,7 +190,6 @@ function createRobot(scene) {
   const PRCDims = [0.155, 0.155, 0.4];
   const cylinderGeometryPRC = new THREE.CylinderGeometry(...PRCDims, 32);
   const pliersRotationCylinder = new THREE.Mesh(cylinderGeometryPRC, metal2);
-  scene.add(pliersRotationCylinder);
   // Create pivot point between pliers base and pliers rotation cylinder (PB to PRC)
   const pivotPointPBtoPRC = new THREE.Object3D();
   pliersBase.add(pivotPointPBtoPRC);
@@ -219,7 +205,6 @@ function createRobot(scene) {
   // Pliers decoration cylinder 2 (PDC)
   const cylinderGeometryPDC = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
   const pliersDecorationCylinder2 = new THREE.Mesh(cylinderGeometryPDC, metal1);
-  scene.add(pliersDecorationCylinder2);
   // Create pivot point between pliers decoration cylinder and pliers decoration cylinder 2 (PRC to PDC)
   const pivotPointPRCtoPDC = new THREE.Object3D();
   pliersRotationCylinder.add(pivotPointPRCtoPDC);
@@ -230,7 +215,6 @@ function createRobot(scene) {
   // Pliers holder 1 (PH1)
   const boxGeometryPH1 = new THREE.BoxGeometry(0.03, 0.155, 0.5);
   const pliersHolder1 = new THREE.Mesh(boxGeometryPH1, metal2);
-  scene.add(pliersHolder1);
   // Create pivot point between pliers rotation cylinder and pliers holder 1 (PRC to PH1)
   const pivotPointPRCtoPH1 = new THREE.Object3D();
   pliersRotationCylinder.add(pivotPointPRCtoPH1);
@@ -241,7 +225,6 @@ function createRobot(scene) {
   // Pliers holder 2 (PH2)
   const boxGeometryPH2 = new THREE.BoxGeometry(0.03, 0.155, 0.5);
   const pliersHolder2 = new THREE.Mesh(boxGeometryPH2, metal2);
-  scene.add(pliersHolder2);
   // Create pivot point between pliers rotation cylinder and pliers holder 2 (PRC to PH2)
   const pivotPointPRCtoPH2 = new THREE.Object3D();
   pliersRotationCylinder.add(pivotPointPRCtoPH2);
@@ -252,7 +235,6 @@ function createRobot(scene) {
   // Pliers grabber base 1 (PGB1)
   const boxGeometryPGB1 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
   const pliersGrabberBase1 = new THREE.Mesh(boxGeometryPGB1, metal2);
-  scene.add(pliersGrabberBase1);
   // Create pivot point between pliers holder 1 and pliers grabber base 1 (PH1 to PGB1)
   const pivotPointPH1toPGB1 = new THREE.Object3D();
   pliersHolder1.add(pivotPointPH1toPGB1);
@@ -265,7 +247,6 @@ function createRobot(scene) {
   // Pliers grabber base 2 (PGB1)
   const boxGeometryPGB2 = new THREE.BoxGeometry(0.08, 0.155, 0.3);
   const pliersGrabberBase2 = new THREE.Mesh(boxGeometryPGB2, metal2);
-  scene.add(pliersGrabberBase2);
   // Create pivot point between pliers holder 2 and pliers grabber base 2 (PH1 to PGB2)
   const pivotPointPH1toPGB2 = new THREE.Object3D();
   pliersHolder1.add(pivotPointPH1toPGB2);
@@ -278,7 +259,6 @@ function createRobot(scene) {
   // Pliers grabber 1 (PG1)
   const coneGeometryPG1 = new THREE.ConeGeometry(0.05, 0.5, 3);
   const pliersGrabber1 = new THREE.Mesh(coneGeometryPG1, metal2);
-  scene.add(pliersGrabber1);
   // Create pivot point between pliers grabber base 1 and pliers grabber 1 (PGB1 to PG1)
   const pivotPointPGB1toPG1 = new THREE.Object3D();
   pliersGrabberBase1.add(pivotPointPGB1toPG1);
@@ -289,7 +269,6 @@ function createRobot(scene) {
   // Pliers grabber 2 (PG2)
   const coneGeometryPG2 = new THREE.ConeGeometry(0.05, 0.5, 3);
   const pliersGrabber2 = new THREE.Mesh(coneGeometryPG2, metal2);
-  scene.add(pliersGrabber2);
   // Create pivot point between pliers grabber base 2 and pliers grabber 2 (PGB1 to PG2)
   const pivotPointPGB2toPG2 = new THREE.Object3D();
   pliersGrabberBase2.add(pivotPointPGB2toPG2);
