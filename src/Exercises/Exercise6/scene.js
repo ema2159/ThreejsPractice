@@ -50,6 +50,18 @@ function setRobotAngles(robotControls, normAngles, A) {
 }
 
 const [normAngles, robotGeometry, robotControls] = createRobot(scene);
+function robotAnimation(A0, A1, step) {
+  let resultAngles = A0.map((angle, i) => {
+    if(angle > A1[i]+step[i]) {
+      return angle -= step[i];
+    } else if(angle < A1[i]-step[i]){
+      return angle += step[i];
+    } else {
+      return A1[i]
+    }
+  });
+  return resultAngles;
+}
 
 
 const RobotKin = new Kinematics(robotGeometry)
