@@ -138,7 +138,7 @@ function createRobot(scene) {
   upperBase.position.set(...UBPosition);
   upperBase.rotation.x = Math.PI/2
   upperBase.rotation.z = -Math.PI/3
-  const V2 = [UBPosition[0], UBPosition[2], UBPosition[1]];
+  const V2 = [UBPosition[0], UBPosition[2], -UBPosition[1]];
 
   // Rotation cylinder (RC)
   const RCDims = [0.15, 0.15, 1.5];
@@ -200,7 +200,7 @@ function createRobot(scene) {
   const PRCPosition = [0.0, 0.2, 0];
   pliersRotationCylinder.position.set(...PRCPosition);
   const V3 = [RCPosition[1] + PBPosition[1] + PRCJointPosition[1], 0, 0];
-  const V4 = [0, PRCDims[2], 0];
+  const V4 = [0, -PRCDims[2], 0];
 
   // Pliers decoration cylinder 2 (PDC)
   const cylinderGeometryPDC = new THREE.CylinderGeometry(0.2, 0.155, 0.15, 32);
@@ -282,7 +282,7 @@ function createRobot(scene) {
     rotationDisc1.rotation.y,
     rotationDisc4.rotation.y + Math.PI,
     rotationCylinder.rotation.y,
-    pivotPointPBtoPRC.rotation.z,
+    Math.PI/2,
     pliersRotationCylinder.rotation.y,
     pivotPointPH1toPGB2.rotation.x,
     pivotPointPH1toPGB1.rotation.x,

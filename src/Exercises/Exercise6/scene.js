@@ -43,7 +43,7 @@ function setRobotAngles(robotControls, A, normAngles) {
   robotControls[1].rotation.y = A[1] + normAngles[1];
   robotControls[2].rotation.y = A[2] + normAngles[2];
   robotControls[3].rotation.y = A[3] + normAngles[3];
-  robotControls[4].rotation.z = A[4] + normAngles[4];
+  robotControls[4].rotation.z = -A[4] + normAngles[4];
   robotControls[5].rotation.y = A[5] + normAngles[5];
   robotControls[6].rotation.x = A[6] + normAngles[6];
   robotControls[7].rotation.x = A[7] + normAngles[7];
