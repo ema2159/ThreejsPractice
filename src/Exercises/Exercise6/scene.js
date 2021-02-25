@@ -38,7 +38,7 @@ scene.add(light);
 
 //Function to set all the angles for the robot
 // These are set to comply with Kinematics API
-function setRobotAngles(robotControls, A, normAngles) {
+function setRobotAngles(robotControls, normAngles, A) {
   robotControls[0].rotation.y = A[0] + normAngles[0];
   robotControls[1].rotation.y = A[1] + normAngles[1];
   robotControls[2].rotation.y = A[2] + normAngles[2];
