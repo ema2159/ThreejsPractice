@@ -51,28 +51,13 @@ function setRobotAngles(robotControls, A, normAngles) {
 
 const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 
-let angles = [0, -Math.PI/2, Math.PI/2, 0, 0, 0, 0, 0]
 
-console.log(robotGeometry);
 const RobotKin = new Kinematics(robotGeometry)
-const pose = RobotKin.forward(...angles)[5]
-console.log(pose);
 
-// angles = [...RobotKin.inverse(0, 0, 0, 0, 0, 0), 0, 0];
-// console.log(angles);
 
-setRobotAngles(robotControls, angles, normAngles);
 
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
-  // baseDisc2.rotation.y += 0.01;
-  // rotationDisc1.rotation.y += 0.01
-  // rotationDisc4.rotation.y += 0.01
-  // rotationCylinder.rotation.y += 0.01;
-  // pivotPointPBtoPRC.rotation.z += 0.01;
-  // pliersRotationCylinder.rotation.y += 0.1;
-  // pivotPointPH1toPGB2.rotation.x += 0.01;
-  // pivotPointPH1toPGB1.rotation.x -= 0.01;
 }
 animate();
