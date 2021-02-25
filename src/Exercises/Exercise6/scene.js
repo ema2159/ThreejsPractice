@@ -49,7 +49,6 @@ function setRobotAngles(robotControls, normAngles, A) {
   robotControls[7].rotation.x = A[7] + normAngles[7];
 }
 
-const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 function robotAnimation(A0, A1, step) {
   let resultAngles = A0.map((angle, i) => {
     if(angle > A1[i]+step[i]) {
@@ -63,12 +62,19 @@ function robotAnimation(A0, A1, step) {
   return resultAngles;
 }
 
+const [normAngles, robotGeometry, robotControls] = createRobot(scene);
+const pi = Math.PI;
+let angles0 = [0, 0, 0, 0, 0, 0, 0, 0]
 
 const RobotKin = new Kinematics(robotGeometry)
 
+let angles = [...RobotKin.inverse(2, 0, 0, 0, -pi/2, 0), 0, 0];
 
+let step = [0.01, 0.01, 0.01, 0.01, 0.01, 0.05, 0.01, 0.01];
 
 function animate() {
+  angles0 = robotAnimation(angles0, angles, step);
+  setRobotAngles(robotControls, normAngles, angles0);
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
