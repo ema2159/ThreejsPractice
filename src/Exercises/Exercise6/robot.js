@@ -138,7 +138,7 @@ function createRobot(scene) {
   upperBase.position.set(...UBPosition);
   upperBase.rotation.x = Math.PI/2
   upperBase.rotation.z = -Math.PI/3
-  const V2 = [UBPosition[0], UBPosition[2], -UBPosition[1]];
+  const V2 = [UBPosition[0], UBPosition[2], UBPosition[1]];
 
   // Rotation cylinder (RC)
   const RCDims = [0.15, 0.15, 1.5];
