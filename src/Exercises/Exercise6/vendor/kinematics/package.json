@@ -1,0 +1,92 @@
+{
+  "_from": "kinematics",
+  "_id": "kinematics@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-iMQxWnOVcWwYnBPQaTqtpeATy2Y=",
+  "_location": "/kinematics",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "kinematics",
+    "name": "kinematics",
+    "escapedName": "kinematics",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/kinematics/-/kinematics-1.0.2.tgz",
+  "_shasum": "88c4315a7395716c189c13d0693aada5e013cb66",
+  "_spec": "kinematics",
+  "_where": "/home/ema2159/Documents/UJM/Real Time 3D-XR Visualization/Practical work/PW2/src/Exercises/Exercise6",
+  "author": {
+    "name": "Maximilian Beck",
+    "email": "maximilian@glumb.de",
+    "url": "http://glumb.de/"
+  },
+  "bugs": {
+    "url": "https://github.com/glumb/kinematics/issues"
+  },
+  "bundleDependencies": false,
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "deprecated": false,
+  "description": "Robot kinematics library",
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-core": "6.18.2",
+    "babel-eslint": "7.1.0",
+    "babel-polyfill": "6.16.0",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-stage-2": "6.18.0",
+    "babel-register": "6.18.0",
+    "chai": "3.5.0",
+    "codecov.io": "0.1.6",
+    "commitizen": "2.8.6",
+    "cz-conventional-changelog": "1.2.0",
+    "eslint": "3.10.0",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "6.6.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.1.2",
+    "nyc": "8.4.0",
+    "semantic-release": "^4.3.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/glumb/kinematics#readme",
+  "keywords": [
+    "robotics",
+    "inverse kinematics",
+    "kinematcis"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "kinematics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glumb/kinematics.git"
+  },
+  "scripts": {
+    "build": "babel --out-dir dist src",
+    "check-coverage": "nyc check-coverage --functions 100",
+    "commit": "git-cz",
+    "cover": "nyc npm t",
+    "eslint": "eslint './src/*.js' './test/*.js' --fix",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "mocha ./test/*.test.js --compilers js:babel-register",
+    "watch:test": "npm t -- -w"
+  },
+  "version": "1.0.2"
+}
