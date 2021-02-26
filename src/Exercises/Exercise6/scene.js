@@ -1,7 +1,8 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 import {OrbitControls} from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
 import createRobot from "./robot.js";
-import Kinematics from "./node_modules/kinematics/dist/kinematics.js"
+import Kinematics from "./vendor/kinematics/dist/kinematics.js"
+
 // Make PI less tedious to type
 const pi = Math.PI;
 
