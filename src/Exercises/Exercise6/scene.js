@@ -94,6 +94,16 @@ trashBin.position.set(...trashBinCoors);
 trashBin.rotation.x = -pi/2
 scene.add(trashBin);
 
+
+// Sphere 1
+const sphereDims = [0.3, 30, 30];
+const sphereGeometry1 = new THREE.SphereGeometry(...sphereDims);
+const sphere1 = new THREE.Mesh(sphereGeometry1, material2);
+const spherCoors = [2 + coordsCalibration[0],
+		    0 + coordsCalibration[1],
+		    0 + coordsCalibration[2]];
+sphere1.position.set(...spherCoors);
+scene.add(sphere1);
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
