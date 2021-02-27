@@ -61,14 +61,13 @@ const metal =  new THREE.MeshStandardMaterial( {
   normalScale: 1.0
 });
 
-const [normAngles, robotGeometry, robotControls] = createRobot(scene);
-let angles0 = [0, 0, 0, 0, 0, 0, 0, 0]
+const coordsCalibration = [0, -2, -5]
+const [normAngles, robotGeometry, robotControls] = createRobot(scene, coordsCalibration);
 
 const RobotKin = new Kinematics(robotGeometry)
 
-let angles = [...RobotKin.inverse(2, 0, 0, 0, -pi/2, 0), 0, 0];
-
-let step = [0.01, 0.01, 0.01, 0.01, 0.01, 0.05, 0.01, 0.01];
+let anglesCurrent = [0, 0, 0, 0, 0, 0, -pi/4, pi/4]
+setRobotAngles(robotControls, normAngles, anglesCurrent);
 
 function animate() {
   requestAnimationFrame(animate);
