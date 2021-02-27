@@ -41,6 +41,7 @@ controls.listenToKeyEvents(window); // optional
 // Append renderer to index.html body
 document.body.appendChild(renderer.domElement);
 
+// Configure lights
 const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(0, 0, 1).normalize();
 scene.add(light);
