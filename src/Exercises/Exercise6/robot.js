@@ -1,6 +1,6 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 
-function createRobot(scene) {
+function createRobot(scene, basePosition) {
   // Materials
   const metal1 =  new THREE.MeshStandardMaterial( {
     color: 0xFB8526,
@@ -25,7 +25,7 @@ function createRobot(scene) {
   // Base disc (D1)
   const cylinderGeometryD1 = new THREE.CylinderGeometry(1, 1, 0.3, 32);
   const baseDisc = new THREE.Mesh(cylinderGeometryD1, metal2);
-  baseDisc.position.set(0, -2, -5);
+  baseDisc.position.set(...basePosition);
   scene.add(baseDisc);
 
   // Rotation base disc (D2)
