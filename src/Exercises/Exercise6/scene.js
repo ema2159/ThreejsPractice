@@ -104,6 +104,50 @@ const spherCoors = [2 + coordsCalibration[0],
 		    0 + coordsCalibration[2]];
 sphere1.position.set(...spherCoors);
 scene.add(sphere1);
+
+sphere1.cursor = 'pointer';
+sphere1.on('click', function(ev) {
+  // Sphere coordinates
+  let {x, y, z} = this.position;
+  x -= coordsCalibration[0];
+  y -= coordsCalibration[1] - sphereDims[0];
+  z -= coordsCalibration[2];
+  // Create angles for the sphere grabbing animation 
+  let angles1 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/6, pi/6];
+  let angles2 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
+  // Create the sphere grabbing animation with tween and tween2
+  let tween = new TWEEN.Tween(anglesCurrent)
+      .to(angles1, 600)
+      .easing(TWEEN.Easing.Quadratic.Out)
+      .onUpdate(function(){
+	setRobotAngles(robotControls, normAngles, anglesCurrent);
+      });
+  let tween2 = new TWEEN.Tween(anglesCurrent)
+      .to(angles2, 200)
+      .easing(TWEEN.Easing.Quadratic.Out)
+      .onUpdate(function(){
+	setRobotAngles(robotControls, normAngles, anglesCurrent);
+      });
+  // Trashbin coordinates
+  ({x, y, z} = trashBin.position);
+  x -= coordsCalibration[0];
+  y -= coordsCalibration[1]-1.5;
+  z -= coordsCalibration[2];
+  // Create angles for the sphere grabbing animation 
+  let angles3 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
+  let angles4 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
+  // Create throwing the trash animation
+  let tween3 = new TWEEN.Tween(anglesCurrent)
+      .to(angles3, 800)
+      .easing(TWEEN.Easing.Quadratic.In)
+      .onUpdate(function(){
+	setRobotAngles(robotControls, normAngles, anglesCurrent);
+      });
+  tween2.chain(tween3);
+  tween.chain(tween2);
+  tween.start();
+});
+
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
