@@ -1,6 +1,7 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
 import { Interaction } from "./vendor/three\.interaction/build/three\.interaction\.module.js";
+import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.5.0/dist/tween.esm.js';
 import Kinematics from "./vendor/kinematics/dist/kinematics.js"
 import createRobot from "./robot.js";
 import { setRobotAngles } from "./robot.js";
@@ -45,19 +46,6 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 
-function robotAnimation(A0, A1, step) {
-  let resultAngles = A0.map((angle, i) => {
-    if(angle > A1[i]+step[i]) {
-      return angle -= step[i];
-    } else if(angle < A1[i]-step[i]){
-      return angle += step[i];
-    } else {
-      return A1[i]
-    }
-  });
-  return resultAngles;
-}
-
 const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 let angles0 = [0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -68,9 +56,8 @@ let angles = [...RobotKin.inverse(2, 0, 0, 0, -pi/2, 0), 0, 0];
 let step = [0.01, 0.01, 0.01, 0.01, 0.01, 0.05, 0.01, 0.01];
 
 function animate() {
-  angles0 = robotAnimation(angles0, angles, step);
-  setRobotAngles(robotControls, normAngles, angles0);
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  TWEEN.update();
 }
 animate();
