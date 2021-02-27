@@ -45,6 +45,21 @@ const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
+// Create materials
+const material2 = new THREE.MeshPhongMaterial({
+  color: 0xba45a3,
+  shininess: 150,
+});
+
+const metal =  new THREE.MeshStandardMaterial( {
+  color: 0x808080,
+  metalness: 1.0,
+  roughness: 0.7,
+  ambientIntensity: 0.2,
+  aoMapIntensity: 1.0,
+  envMapIntensity: 1.0,
+  normalScale: 1.0
+});
 
 const [normAngles, robotGeometry, robotControls] = createRobot(scene);
 let angles0 = [0, 0, 0, 0, 0, 0, 0, 0]
