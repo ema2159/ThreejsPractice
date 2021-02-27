@@ -69,6 +69,31 @@ const RobotKin = new Kinematics(robotGeometry)
 let anglesCurrent = [0, 0, 0, 0, 0, 0, -pi/4, pi/4]
 setRobotAngles(robotControls, normAngles, anglesCurrent);
 
+
+// Trash bin
+const extrudeSettings = {
+    amount : 1.2,
+    steps : 1,
+    bevelEnabled: false,
+    curveSegments: 140
+};
+
+const arcShape = new THREE.Shape();
+arcShape.absarc(0, 0, 0.7, 0, Math.PI * 2, 0, false);
+
+const holePath = new THREE.Path();
+holePath.absarc(0, 0, 0.6, 0, Math.PI * 2, true);
+arcShape.holes.push(holePath);
+
+const trashBinGeometry = new THREE.ExtrudeGeometry(arcShape, extrudeSettings);
+const trashBin = new THREE.Mesh(trashBinGeometry, metal);
+const trashBinCoors = [-2 + coordsCalibration[0],
+		       0 + coordsCalibration[1],
+		       -1 + coordsCalibration[2]];
+trashBin.position.set(...trashBinCoors);
+trashBin.rotation.x = -pi/2
+scene.add(trashBin);
+
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
