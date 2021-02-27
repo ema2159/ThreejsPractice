@@ -53,7 +53,7 @@ const material2 = new THREE.MeshPhongMaterial({
 });
 
 const metal =  new THREE.MeshStandardMaterial( {
-  color: 0x808080,
+  color: 0x303030,
   metalness: 1.0,
   roughness: 0.7,
   ambientIntensity: 0.2,
