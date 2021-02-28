@@ -6,8 +6,11 @@ import Kinematics from "./vendor/kinematics/dist/kinematics.js"
 import createRobot from "./robot.js";
 import { setRobotAngles } from "./robot.js";
 
+// Constants:
 // Make PI less tedious to type
 const pi = Math.PI;
+// Reference position using robot arm's base as reference
+const coordsCalibration = [0, -2, -5]
 
 // Setup scene
 const scene = new THREE.Scene();
@@ -62,7 +65,6 @@ const metal =  new THREE.MeshStandardMaterial( {
   normalScale: 1.0
 });
 
-const coordsCalibration = [0, -2, -5]
 const [normAngles, robotGeometry, robotControls, holdingPoint] = createRobot(scene, coordsCalibration);
 
 const RobotKin = new Kinematics(robotGeometry)
