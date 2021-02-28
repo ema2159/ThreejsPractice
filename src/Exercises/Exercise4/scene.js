@@ -311,12 +311,5 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
   baseDisc2.rotation.y += 0.01;
-  // rotationDisc1.rotation.y += 0.01
-  // rotationDisc4.rotation.y += 0.01
-  // rotationCylinder.rotation.y += 0.01;
-  // pliersRotationCylinder.rotation.y += 0.1;
-  // pivotPointPBtoPRC.rotation.z += 0.01;
-  // pivotPointPH1toPGB2.rotation.x += 0.01;
-  // pivotPointPH1toPGB1.rotation.x -= 0.01;
 }
 animate();
