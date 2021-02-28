@@ -95,13 +95,10 @@ trashBin.position.set(...trashBinCoors);
 trashBin.rotation.x = -pi/2
 scene.add(trashBin);
 
-
-// Sphere 1
-const sphereDims = [0.3, 30, 30];
-const sphereGeometry1 = new THREE.SphereGeometry(...sphereDims);
-
+// Function for creating a set of clickable spheres which start a pickup animation when clicked
 function createSpheres(sphereAmount, rRange, theetaRange) {
   // Sphere position calculation according to given range in poolar coordinates
+  const sphereDims = [0.3, 30, 30];
   const spherePositions = [];
   let r;
   let theeta;
@@ -118,6 +115,8 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
   }
 
   // Create spheres given the positions
+  // Sphere properties
+  const sphereGeometry1 = new THREE.SphereGeometry(...sphereDims);
 
   // Animation blocking variable
   let runningAnimation = false;
