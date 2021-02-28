@@ -1,7 +1,7 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
-import { Interaction } from "./vendor/three\.interaction/build/three\.interaction\.module.js";
 import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.5.0/dist/tween.esm.js';
+import { Interaction } from "./vendor/three\.interaction/build/three\.interaction\.module.js";
 import Kinematics from "./vendor/kinematics/dist/kinematics.js"
 import createRobot from "./robot.js";
 import { setRobotAngles } from "./robot.js";
