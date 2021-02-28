@@ -1,0 +1,32 @@
+#+TITLE: Project Work 2: Three.js
+#+CREATOR: Emmanuel Bustos T.
+#+OPTIONS: toc:nil
+
+* Description
+  This practice includes 6 exercises utilizing the Javascript 3D library [[https://threejs.org/][Three.js]], with increasing levels of difficulty.
+* Instructions
+  You'll require the [[https://www.npmjs.com/package/live-server][live-server]] NPM package. Then, simply download and execute the =live-server= command inside the =src/= directory. This will lead you to the starting menu, where you should be able to select the desired exercise.
+* Exercises
+** Exercise 1: Primitives
+   This exercise consists on creating a scene and placing all the available Three.js primitives on it. Also, a floor with a crosses pattern must be created utilizing Three.js's line segments.
+   [[./screenshots/ex1.png]]
+** Exercise 2: Cameras and Controls
+   This exercise takes from exercise 1. It renders the same scene twice in one page, one utilizing a perspective camera and fly controls and the other utilizing an orthogonal camera an orbit controls.
+   [[./screenshots/ex2.png]]
+** Exercise 3: Custom geometry
+   This exercise consists on creating a hollow cube, built from a set of vertices, normals and texture mapping coordinates which compose the set of triangles of the geometry.
+   [[./screenshots/ex3.png]]
+** Exercise 4: Robot arm
+   This exercise consists on the creation of a robot arm with 6 degrees of freedom (DoF) utilizing the Three.js's primitives.
+   [[./screenshots/ex4.png]]
+** Exercise 5: Ball picking
+   This exercise takes from exercise 4, and it consists in giving to the robot arm the ability of picking up a set of randomly generated balls in the scene's floor, and then throwing them inside a trash bin. For solving this exercise, the following libraries were used:
+
+   - [[https://github.com/glumb/kinematics][Kinematics]]: For calculating the angles of the 6 Dof arm's joints.
+   - [[https://github.com/jasonChen1982/three.interaction.js][three.interaction.js]]: As the event manager for making the scene balls clickable.
+   - [[https://createjs.com/tweenjs][TWEEN]]: As the animation engine library.
+
+Kinematics and three.interaction.js were slightly modified in order to solve some bugs which prevented them from being imported.
+   [[./screenshots/ex5.gif]]
+** Exercise 6: VR
+   This exercise simply consists on taking exercise 5 and converting it to a VR experience.
