@@ -1,5 +1,6 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
+import { VRButton } from 'https://unpkg.com/three/examples/jsm/webxr/VRButton.js';
 import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.5.0/dist/tween.esm.js';
 import { Interaction } from "./vendor/three\.interaction/build/three\.interaction\.module.js";
 import Kinematics from "./vendor/kinematics/dist/kinematics.js"
@@ -35,6 +36,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Setup Interactive module
 const interaction = new Interaction(renderer, scene, camera);
+
+// Add VRButton
+document.body.appendChild( VRButton.createButton( renderer ) );
+renderer.xr.enabled = true;
 
 // Setup orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -220,9 +225,7 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
 createSpheres(20, [1.3, 2.9], [-5*pi/6, pi/2]);
 
 
-function animate() {
-  requestAnimationFrame(animate);
+renderer.setAnimationLoop( function () {
   renderer.render(scene, camera);
   TWEEN.update();
-}
-animate();
+});
