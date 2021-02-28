@@ -7,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #27212E;
+  background: #1D252C;
 }
 
 h2 {
@@ -17,7 +17,7 @@ h2 {
   margin: 0;
   font-family: "Rajdhani", serif;
   font-size: 1.7rem;
-  color: #ED60BA;
+  color: #8BD49C;
 }
 
 ul {
@@ -47,7 +47,7 @@ ul li a::after {
   left: 0;
   width: 100%;
   height: 3px;
-  background: #ED60BA;
+  background: #539AFC;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s;
