@@ -63,7 +63,7 @@ const metal =  new THREE.MeshStandardMaterial( {
 });
 
 const coordsCalibration = [0, -2, -5]
-const [normAngles, robotGeometry, robotControls] = createRobot(scene, coordsCalibration);
+const [normAngles, robotGeometry, robotControls, holdingPoint] = createRobot(scene, coordsCalibration);
 
 const RobotKin = new Kinematics(robotGeometry)
 

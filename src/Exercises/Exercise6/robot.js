@@ -256,6 +256,12 @@ function createRobot(scene, basePosition) {
   pivotPointPH1toPGB2.rotation.x += Math.PI/6;
   pliersGrabberBase2.position.set(-0.05, 0, -0.15);
 
+  // Grabbing point for the robotic arm (HP)
+  const holdingCoords = [0, 0.4, 0];
+  const holdingPoint = new THREE.Object3D();
+  pliersHolder1.add(holdingPoint);
+  holdingPoint.position.set(...holdingCoords);
+
   // Pliers grabber 1 (PG1)
   const coneGeometryPG1 = new THREE.ConeGeometry(0.05, 0.5, 3);
   const pliersGrabber1 = new THREE.Mesh(coneGeometryPG1, metal2);
@@ -302,7 +308,7 @@ function createRobot(scene, basePosition) {
     pivotPointPH1toPGB2,
     pivotPointPH1toPGB1,
   ]
-  return [normalizationAngles, robotGeometry, robotControls];
+  return [normalizationAngles, robotGeometry, robotControls, holdingPoint];
 }
 
 //Function to set all the angles for the robot
