@@ -9,16 +9,24 @@
 * Exercises
 ** Exercise 1: Primitives
    This exercise consists on creating a scene and placing all the available Three.js primitives on it. Also, a floor with a crosses pattern must be created utilizing Three.js's line segments.
+
    [[./screenshots/ex1.png]]
+   
 ** Exercise 2: Cameras and Controls
    This exercise takes from exercise 1. It renders the same scene twice in one page, one utilizing a perspective camera and fly controls and the other utilizing an orthogonal camera an orbit controls.
+   
    [[./screenshots/ex2.png]]
+   
 ** Exercise 3: Custom geometry
    This exercise consists on creating a hollow cube, built from a set of vertices, normals and texture mapping coordinates which compose the set of triangles of the geometry.
+   
    [[./screenshots/ex3.png]]
+   
 ** Exercise 4: Robot arm
    This exercise consists on the creation of a robot arm with 6 degrees of freedom (DoF) utilizing the Three.js's primitives.
+   
    [[./screenshots/ex4.png]]
+   
 ** Exercise 5: Ball picking
    This exercise takes from exercise 4, and it consists in giving to the robot arm the ability of picking up a set of randomly generated balls in the scene's floor, and then throwing them inside a trash bin. For solving this exercise, the following libraries were used:
 
@@ -27,6 +35,8 @@
    - [[https://createjs.com/tweenjs][TWEEN]]: As the animation engine library.
 
 Kinematics and three.interaction.js were slightly modified in order to solve some bugs which prevented them from being imported.
+
    [[./screenshots/ex5.gif]]
+   
 ** Exercise 6: VR
    This exercise simply consists on taking exercise 5 and converting it to a VR experience.
