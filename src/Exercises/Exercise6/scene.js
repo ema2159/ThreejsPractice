@@ -118,6 +118,10 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
   }
 
   // Create spheres given the positions
+
+  // Animation blocking variable
+  let runningAnimation = false;
+ 
   spherePositions.map(pos => {
     const sphere = new THREE.Mesh(sphereGeometry1, material2);
     const sphereCoors = [pos[0]*Math.cos(pos[1]) + coordsCalibration[0],
@@ -128,6 +132,12 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
 
     sphere.cursor = 'pointer';
     sphere.on('click', function(ev) {
+      // Block other animations when animation already in place
+      if(runningAnimation) {
+	return;
+      } else {
+	runningAnimation = true;
+      }
       // Sphere coordinates
       let currSphere = this;
       let {x, y, z} = currSphere.position;
@@ -191,6 +201,7 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
 	  })
 	  .onComplete(function(){
 	    scene.remove(currSphere);
+	    runningAnimation = false;
 	  });
       // Animation chain
       tween4.chain(tween5);
