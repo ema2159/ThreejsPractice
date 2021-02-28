@@ -99,6 +99,26 @@ scene.add(trashBin);
 // Sphere 1
 const sphereDims = [0.3, 30, 30];
 const sphereGeometry1 = new THREE.SphereGeometry(...sphereDims);
+function createSpheres(sphereAmount, rRange, theetaRange) {
+  // Sphere position calculation according to given range in poolar coordinates
+  const spherePositions = [];
+  let r;
+  let theeta;
+  for (let i = 0; i < sphereAmount; i++) {
+    r = Math.random() * (rRange[1] - rRange[0]) + rRange[0];
+    theeta = Math.random() * (theetaRange[1] - theetaRange[0]) + theetaRange[0];
+    if(spherePositions
+       .filter(pos =>
+	 // If the spheres don't overlap
+	 {Math.sqrt(pos[0]**2 + r**2 - 2*pos[0]*r*Math.cos(pos[1]-theeta)) > sphereDims[0]})
+       .length === 0) {
+      spherePositions.push([r, theeta]);
+    }
+  }
+
+  // Create spheres given the positions
+  console.log(spherePositions);
+}
 const sphere1 = new THREE.Mesh(sphereGeometry1, material2);
 const spherCoors = [2 + coordsCalibration[0],
 		    0 + coordsCalibration[1],
