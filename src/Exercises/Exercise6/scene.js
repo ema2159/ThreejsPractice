@@ -65,10 +65,13 @@ const metal =  new THREE.MeshStandardMaterial( {
   normalScale: 1.0
 });
 
+// Create robot and provide robot controls, geometry (for Kinematics) and holding point
 const [normAngles, robotGeometry, robotControls, holdingPoint] = createRobot(scene, coordsCalibration);
 
+// Initialize Kinematics object for calculating the angles
 const RobotKin = new Kinematics(robotGeometry)
 
+// Put robot in initial position
 let anglesCurrent = [0, 0, 0, 0, 0, 0, -pi/4, pi/4]
 setRobotAngles(robotControls, normAngles, anglesCurrent);
 
@@ -109,7 +112,7 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
     theeta = Math.random() * (theetaRange[1] - theetaRange[0]) + theetaRange[0];
     if(spherePositions
        .filter(pos =>
-	 // If the spheres don't overlap
+	 // Calculate if the spheres don't overlap
 	 {return Math.sqrt(pos[0]**2 + r**2 - 2*pos[0]*r*Math.cos(pos[1]-theeta)) < 2*sphereDims[0]})
        .length === 0) {
       spherePositions.push([r, theeta]);
