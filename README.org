@@ -8,7 +8,7 @@
   You'll require the [[https://www.npmjs.com/package/live-server][live-server]] NPM package. Then, simply download and execute the =live-server= command inside the =src/= directory. This will lead you to the starting menu, where you should be able to select the desired exercise.
 * Exercises
 ** Exercise 1: Primitives
-   This exercise consists on creating a scene and placing all the available Three.js primitives on it. Also, a floor with a crosses pattern must be created utilizing Three.js's line segments.
+   This exercise consists on creating a scene and placing all the available Three.js primitives in it. Also, a floor with a crosses pattern must be created utilizing Three.js's line segments.
 
    [[./screenshots/ex1.png]]
    
@@ -23,12 +23,12 @@
    [[./screenshots/ex3.png]]
    
 ** Exercise 4: Robot arm
-   This exercise consists on the creation of a robot arm with 6 degrees of freedom (DoF) utilizing the Three.js's primitives.
+   This exercise consists on the creation of a robot arm with 6 degrees of freedom (DoF) utilizing Three.js's primitives.
    
    [[./screenshots/ex4.png]]
    
 ** Exercise 5: Ball picking
-   This exercise takes from exercise 4, and it consists in giving to the robot arm the ability of picking up a set of randomly generated balls in the scene's floor, and then throwing them inside a trash bin. For solving this exercise, the following libraries were used:
+   This exercise takes from exercise 4, and it consists in giving the robot arm the ability of picking up a set of randomly generated balls in the scene's floor, and then throwing them inside a trash bin. For solving this exercise, the following libraries were used:
 
    - [[https://github.com/glumb/kinematics][Kinematics]]: For calculating the angles of the 6 Dof arm's joints.
    - [[https://github.com/jasonChen1982/three.interaction.js][three.interaction.js]]: As the event manager for making the scene balls clickable.
