@@ -110,9 +110,12 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
   for (let i = 0; i < sphereAmount; i++) {
     r = Math.random() * (rRange[1] - rRange[0]) + rRange[0];
     theeta = Math.random() * (theetaRange[1] - theetaRange[0]) + theetaRange[0];
+    // Calculate if the spheres don't overlap.
+    // If the distance (in polar coordinates) between the center of the new sphere overlaps
+    // with the position of any of the already existing spheres, don't add it. The distance
+    // between the centers must be greater than twice the sphere's radius.
     if(spherePositions
        .filter(pos =>
-	 // Calculate if the spheres don't overlap
 	 {return Math.sqrt(pos[0]**2 + r**2 - 2*pos[0]*r*Math.cos(pos[1]-theeta)) < 2*sphereDims[0]})
        .length === 0) {
       spherePositions.push([r, theeta]);
