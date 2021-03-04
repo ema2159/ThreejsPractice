@@ -176,7 +176,7 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
       x -= coordsCalibration[0];
       y -= coordsCalibration[1]-2;
       z -= coordsCalibration[2];
-      // Create angles for the sphere grabbing animation 
+      // Create angles for the sphere disposing animation 
       let angles3 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
       let angles4 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/6, pi/6];
       // Create throwing the trash animation
