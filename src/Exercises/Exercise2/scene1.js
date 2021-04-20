@@ -1,6 +1,6 @@
-import * as THREE from "https://unpkg.com/three/build/three.module.js";
-import {OrbitControls} from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
-import {FlyControls} from "https://unpkg.com/three/examples/jsm/controls/FlyControls.js";
+import * as THREE from "https://unpkg.com/three@0.126.1/build/three.module.js";
+import { OrbitControls } from "https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js";
+import {FlyControls} from "https://unpkg.com/three@0.126.1/examples/jsm/controls/FlyControls.js";
 import addPrimitives from "./primitives.js";
 
 // Setup scene
