@@ -143,7 +143,7 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
     scene.add(sphere);
 
     sphere.cursor = 'pointer';
-    sphere.on('click', function(ev) {
+    sphere.on('pointerup', function(ev) {
       // Block other animations when animation already in place
       if(runningAnimation) {
 	return;
