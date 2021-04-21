@@ -5,7 +5,7 @@
 * Description
   This practice includes 6 exercises utilizing the Javascript 3D library [[https://threejs.org/][Three.js]], with increasing levels of difficulty.
 * Instructions
-  You'll require the [[https://www.npmjs.com/package/live-server][live-server]] NPM package. Then, simply download and execute the =live-server= command inside the =src/= directory. This will lead you to the starting menu, where you should be able to select the desired exercise.
+  You'll require the [[https://www.npmjs.com/package/live-server][live-server]] NPM package. Then, simply download and execute the =live-server= command inside the =src/= directory. This will lead you to the starting menu, where you should be able to select the desired exercise. You can also view the project in [[https://ema2159.github.io/ThreejsPractice/src/][this]] GitHub page.
 * Exercises
 ** Exercise 1: Primitives
    This exercise consists on creating a scene and placing all the available Three.js primitives in it. Also, a floor with a crosses pattern must be created utilizing Three.js's line segments.
